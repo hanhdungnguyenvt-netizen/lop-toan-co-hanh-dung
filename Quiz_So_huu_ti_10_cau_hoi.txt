@@ -1,0 +1,82 @@
+QUIZ SỐ HỮU TỈ – 10 CÂU HỎI
+LỚP TOÁN CÔ HẠNH DUNG
+
+Câu 1. Số hữu tỉ là số có thể viết dưới dạng nào?
+A. a/b với a, b là số nguyên và b ≠ 0
+B. a/b với a, b là số tự nhiên và b = 0
+C. Chỉ là số nguyên
+D. Chỉ là số thập phân hữu hạn
+Đáp án: A
+Phản hồi: Theo tài liệu, số hữu tỉ viết được dưới dạng a/b với a, b là số nguyên và b ≠ 0.
+
+Câu 2. Số nào được tài liệu nhấn mạnh là một số hữu tỉ đặc biệt?
+A. 0
+B. 1,41421356...
+C. 2,2360679...
+D. 7/0
+Đáp án: A
+Phản hồi: Số 0 là số hữu tỉ đặc biệt vì có thể viết dưới dạng phân số có tử bằng 0 và mẫu khác 0.
+
+Câu 3. Mỗi số hữu tỉ được biểu diễn như thế nào trên trục số?
+A. Bằng một điểm
+B. Bằng hai điểm
+C. Bằng một đoạn thẳng
+D. Không biểu diễn được
+Đáp án: A
+Phản hồi: Tài liệu nêu: mỗi số hữu tỉ được biểu diễn bằng một điểm trên trục số.
+
+Câu 4. Khi biểu diễn một số hữu tỉ dương trên trục số, từ 0 ta lấy các phần theo chiều nào?
+A. Chiều tăng của trục số
+B. Chiều giảm của trục số
+C. Cả hai chiều
+D. Không cần xét chiều
+Đáp án: A
+Phản hồi: Số hữu tỉ dương được lấy theo chiều tăng của trục số.
+
+Câu 5. Số đối của 2/3 là số nào?
+A. -2/3
+B. 2/3
+C. 3/2
+D. -3/2
+Đáp án: A
+Phản hồi: Số đối của a/b là -a/b.
+
+Câu 6. Số đối của 0 là số nào?
+A. 0
+B. 1
+C. -1
+D. Không tồn tại
+Đáp án: A
+Phản hồi: Tài liệu nêu rõ số đối của 0 là 0.
+
+Câu 7. Hai số hữu tỉ đối nhau trên trục số có đặc điểm nào?
+A. Nằm về hai phía của gốc 0 và cách đều gốc 0
+B. Cùng nằm bên phải gốc 0
+C. Cùng nằm bên trái gốc 0
+D. Luôn trùng nhau
+Đáp án: A
+Phản hồi: Hai số đối nhau nằm về hai phía của gốc 0 và cách đều gốc 0.
+
+Câu 8. Muốn so sánh hai số hữu tỉ, có thể làm theo cách nào?
+A. Viết dưới dạng phân số có mẫu dương rồi so sánh
+B. Chỉ so sánh tử số
+C. Chỉ so sánh mẫu số
+D. Luôn đổi thành số nguyên
+Đáp án: A
+Phản hồi: Có thể viết hai số hữu tỉ dưới dạng phân số có mẫu dương rồi so sánh.
+
+Câu 9. Số 0 được xếp như thế nào?
+A. Không là số hữu tỉ dương cũng không là số hữu tỉ âm
+B. Là số hữu tỉ dương
+C. Là số hữu tỉ âm
+D. Không phải số hữu tỉ
+Đáp án: A
+Phản hồi: Số 0 là số hữu tỉ nhưng không là số hữu tỉ dương cũng không là số hữu tỉ âm.
+
+Câu 10. Theo định nghĩa trong tài liệu, 7/0 có phải là số hữu tỉ không?
+A. Không, vì mẫu bằng 0
+B. Có, vì tử là số nguyên
+C. Có, vì 7 là số tự nhiên
+D. Có, nếu rút gọn
+Đáp án: A
+Phản hồi: Không. Dạng a/b biểu diễn số hữu tỉ phải có b ≠ 0.
