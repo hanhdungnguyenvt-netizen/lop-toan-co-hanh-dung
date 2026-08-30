@@ -5,15 +5,49 @@ header{background:linear-gradient(135deg,#102a66,#2457a7);color:#fff;text-align:
 header h1{margin:0 0 8px;font-size:34px} header p{margin:4px 0}
 .container{max-width:1080px;margin:30px auto;padding:0 20px}
 .back{display:inline-block;margin-bottom:22px;text-decoration:none;color:#173b78;font-weight:700}
-.intro{text-align:center;margin-bottom:28px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{background:#fff;border-radius:15px;padding:24px 20px;box-shadow:0 5px 18px rgba(0,0,0,.08);text-align:center}
-.card p{color:#53627a;line-height:1.55}.btn{display:inline-block;margin-top:8px;padding:10px 18px;background:#173b78;color:#fff;text-decoration:none;border-radius:7px;font-weight:700}
-.quiz{border-top:4px solid #d69a2d}.lesson{border-top:4px solid #2457a7}.exercise{border-top:4px solid #2f855a}
-.content{background:#fff;border-radius:15px;padding:28px;box-shadow:0 5px 18px rgba(0,0,0,.07);line-height:1.65}
-.placeholder{border:2px dashed #b8c3d6;border-radius:12px;padding:25px;text-align:center;color:#64748b;margin-top:20px}
+.intro{text-align:center;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card,.content{background:#fff;border-radius:15px;padding:24px 20px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+.card{text-align:center}
+.card p,.note{color:#53627a;line-height:1.6}
+.btn{display:inline-block;margin:8px 6px 0;padding:10px 18px;background:#173b78;color:#fff;text-decoration:none;border-radius:7px;font-weight:700}
+.btn.secondary{background:#2f855a}.btn.gold{background:#a66b05}
+.section{margin:24px 0}.section h2{border-bottom:2px solid #e7ecf4;padding-bottom:8px}
+.mathbox{background:#f8fafc;border-left:4px solid #2457a7;padding:15px 18px;border-radius:8px;margin:12px 0;line-height:1.65}
+.exercise{padding:13px 0;border-bottom:1px solid #edf1f6;line-height:1.6}
+.pdfwrap{height:720px;border:1px solid #d8e0ec;border-radius:12px;overflow:hidden;margin-top:18px;background:#fff}
+.pdfwrap iframe{width:100%;height:100%;border:0}
+.quizbox{background:#fff;border-radius:16px;padding:26px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+.qtitle{font-size:21px;font-weight:700;margin-bottom:18px}
+.option{display:block;width:100%;text-align:left;margin:10px 0;padding:13px 14px;border:1px solid #ccd6e5;border-radius:9px;background:#fff;cursor:pointer;font-size:16px}
+.option:hover{background:#f3f7fc}.option.selected{outline:2px solid #2457a7;background:#eef5ff}
+.feedback{margin:14px 0;font-weight:700;min-height:24px}.correct{color:#18733d}.wrong{color:#b42318}
+.progress{margin-bottom:16px;color:#53627a;font-weight:700}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+button{padding:11px 18px;border:0;border-radius:8px;background:#173b78;color:#fff;font-weight:700;cursor:pointer}
+button:disabled{opacity:.5;cursor:not-allowed}
 footer{margin-top:45px;background:#eef2f7;text-align:center;padding:24px 15px;color:#334155}
+@media(max-width:700px){header h1{font-size:29px}.pdfwrap{height:560px}}
 </style></head>
 <body><header><h1>BÀI TẬP – SỐ HỮU TỈ</h1><p>LỚP TOÁN CÔ HẠNH DUNG</p><p>Tư duy sáng tạo – giải hay – học là thích</p></header>
-<main class="container"><a class="back" href="so-huu-ti.html">← Quay lại</a><section class="intro"><h2>BÀI TẬP – SỐ HỮU TỈ</h2><p>Phiếu luyện tập theo chuyên đề.</p></section>
-<div class="content"><h3>Phiếu bài tập</h3><div class="placeholder">KHU VỰC ĐỂ ĐƯA PDF / PHIẾU BÀI TẬP CỦA CÔ DUNG VÀO SAU.</div></div></main>
+<main class="container"><a class="back" href="so-huu-ti.html">← Quay lại</a>
+<section class="intro"><h2>BÀI TẬP – SỐ HỮU TỈ</h2><p>Bài tập lấy từ tài liệu gốc của cô.</p></section>
+<div class="content">
+<div class="exercise"><strong>Bài 1.</strong> Điền kí hiệu thích hợp vào các quan hệ về số hữu tỉ và các tập hợp số.</div>
+<div class="exercise"><strong>Bài 2.</strong> Tìm số đối của các số hữu tỉ đã cho.</div>
+<div class="exercise"><strong>Bài 3.</strong> Xác định những phân số biểu diễn cùng số hữu tỉ <strong>-3/4</strong>.</div>
+<div class="exercise"><strong>Bài 4.</strong> Xác định những phân số biểu diễn cùng một số hữu tỉ.</div>
+<div class="exercise"><strong>Bài 5.</strong> Biểu diễn các số hữu tỉ đã cho trên trục số.</div>
+<div class="exercise"><strong>Bài 6.</strong> So sánh các cặp số hữu tỉ.</div>
+<div class="exercise"><strong>Bài 7.</strong> Sắp xếp các số hữu tỉ theo thứ tự tăng dần hoặc giảm dần.</div>
+<div class="exercise"><strong>Bài 8.</strong> Quan sát trục số và xác định các số được biểu diễn bởi các điểm A, B, C, D.</div>
+<div class="exercise"><strong>Bài 9.</strong> Tìm ba số hữu tỉ bằng <strong>-2/5</strong>.</div>
+<div class="exercise"><strong>Bài 10.</strong> Tìm số hữu tỉ x thỏa mãn bất đẳng thức đã cho trong tài liệu.</div>
+<h2 style="margin-top:28px">Tài liệu bài tập nguyên bản</h2>
+<p class="note">Học sinh có thể xem trực tiếp toàn bộ PDF, bao gồm các biểu thức và hình vẽ đúng như tài liệu.</p>
+<a class="btn" href="so-huu-ti-tai-lieu-goc.pdf#page=5" target="_blank">Mở phần bài tập trong PDF</a>
+<a class="btn secondary" href="so-huu-ti-nhan-chia-buoi-5.pdf" target="_blank">Bài tập nhân – chia</a>
+<div class="pdfwrap"><iframe src="so-huu-ti-tai-lieu-goc.pdf#page=5"></iframe></div>
+</div>
+</main>
 <footer><strong>LỚP TOÁN CÔ HẠNH DUNG</strong><br>© 2026 – Bản quyền thuộc về Lớp Toán cô Hạnh Dung</footer></body></html>

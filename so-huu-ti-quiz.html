@@ -5,15 +5,80 @@ header{background:linear-gradient(135deg,#102a66,#2457a7);color:#fff;text-align:
 header h1{margin:0 0 8px;font-size:34px} header p{margin:4px 0}
 .container{max-width:1080px;margin:30px auto;padding:0 20px}
 .back{display:inline-block;margin-bottom:22px;text-decoration:none;color:#173b78;font-weight:700}
-.intro{text-align:center;margin-bottom:28px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{background:#fff;border-radius:15px;padding:24px 20px;box-shadow:0 5px 18px rgba(0,0,0,.08);text-align:center}
-.card p{color:#53627a;line-height:1.55}.btn{display:inline-block;margin-top:8px;padding:10px 18px;background:#173b78;color:#fff;text-decoration:none;border-radius:7px;font-weight:700}
-.quiz{border-top:4px solid #d69a2d}.lesson{border-top:4px solid #2457a7}.exercise{border-top:4px solid #2f855a}
-.content{background:#fff;border-radius:15px;padding:28px;box-shadow:0 5px 18px rgba(0,0,0,.07);line-height:1.65}
-.placeholder{border:2px dashed #b8c3d6;border-radius:12px;padding:25px;text-align:center;color:#64748b;margin-top:20px}
+.intro{text-align:center;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card,.content{background:#fff;border-radius:15px;padding:24px 20px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+.card{text-align:center}
+.card p,.note{color:#53627a;line-height:1.6}
+.btn{display:inline-block;margin:8px 6px 0;padding:10px 18px;background:#173b78;color:#fff;text-decoration:none;border-radius:7px;font-weight:700}
+.btn.secondary{background:#2f855a}.btn.gold{background:#a66b05}
+.section{margin:24px 0}.section h2{border-bottom:2px solid #e7ecf4;padding-bottom:8px}
+.mathbox{background:#f8fafc;border-left:4px solid #2457a7;padding:15px 18px;border-radius:8px;margin:12px 0;line-height:1.65}
+.exercise{padding:13px 0;border-bottom:1px solid #edf1f6;line-height:1.6}
+.pdfwrap{height:720px;border:1px solid #d8e0ec;border-radius:12px;overflow:hidden;margin-top:18px;background:#fff}
+.pdfwrap iframe{width:100%;height:100%;border:0}
+.quizbox{background:#fff;border-radius:16px;padding:26px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+.qtitle{font-size:21px;font-weight:700;margin-bottom:18px}
+.option{display:block;width:100%;text-align:left;margin:10px 0;padding:13px 14px;border:1px solid #ccd6e5;border-radius:9px;background:#fff;cursor:pointer;font-size:16px}
+.option:hover{background:#f3f7fc}.option.selected{outline:2px solid #2457a7;background:#eef5ff}
+.feedback{margin:14px 0;font-weight:700;min-height:24px}.correct{color:#18733d}.wrong{color:#b42318}
+.progress{margin-bottom:16px;color:#53627a;font-weight:700}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+button{padding:11px 18px;border:0;border-radius:8px;background:#173b78;color:#fff;font-weight:700;cursor:pointer}
+button:disabled{opacity:.5;cursor:not-allowed}
 footer{margin-top:45px;background:#eef2f7;text-align:center;padding:24px 15px;color:#334155}
+@media(max-width:700px){header h1{font-size:29px}.pdfwrap{height:560px}}
 </style></head>
 <body><header><h1>QUIZ – SỐ HỮU TỈ</h1><p>LỚP TOÁN CÔ HẠNH DUNG</p><p>Tư duy sáng tạo – giải hay – học là thích</p></header>
-<main class="container"><a class="back" href="so-huu-ti.html">← Quay lại</a><section class="intro"><h2>QUIZ – SỐ HỮU TỈ</h2><p>Khu vực làm bài trắc nghiệm trực tuyến.</p></section>
-<div class="content"><h3>Quiz chuyên đề</h3><div class="placeholder">KHU VỰC ĐỂ ĐƯA BỘ CÂU HỎI A/B/C/D, CHẤM ĐIỂM VÀ KẾT QUẢ VÀO SAU.</div></div></main>
+<main class="container"><a class="back" href="so-huu-ti.html">← Quay lại</a>
+<section class="intro"><h2>QUIZ – SỐ HỮU TỈ</h2><p>10 câu nhận biết – hiểu bài, bám nội dung tài liệu gốc.</p></section>
+<div class="quizbox">
+<div id="progress" class="progress"></div>
+<div id="qtitle" class="qtitle"></div>
+<div id="options"></div>
+<div id="feedback" class="feedback"></div>
+<div class="controls">
+<button id="checkBtn" onclick="checkAnswer()">Kiểm tra</button>
+<button id="nextBtn" onclick="nextQuestion()" disabled>Câu tiếp</button>
+<button onclick="restart()">Làm lại</button>
+</div>
+</div>
+<script>
+const questions=[{"q": "Số hữu tỉ là số có thể viết dưới dạng nào?", "a": ["a/b với a, b là số nguyên và b ≠ 0", "a/b với a, b là số tự nhiên và b = 0", "Chỉ là số nguyên", "Chỉ là số thập phân hữu hạn"], "correct": 0, "exp": "Theo tài liệu: số hữu tỉ viết được dưới dạng a/b, với a, b là số nguyên và b ≠ 0."}, {"q": "Số nào sau đây là số hữu tỉ đặc biệt được nhấn mạnh trong tài liệu?", "a": ["0", "π", "√2", "1,41421356..."], "correct": 0, "exp": "Tài liệu nhấn mạnh 0 là số hữu tỉ đặc biệt vì có thể viết dưới dạng 0/b với b ≠ 0."}, {"q": "Mỗi số hữu tỉ được biểu diễn như thế nào trên trục số?", "a": ["Bằng một điểm", "Bằng hai điểm", "Bằng một đoạn thẳng", "Không biểu diễn được"], "correct": 0, "exp": "Tài liệu nêu: mỗi số hữu tỉ được biểu diễn bằng một điểm trên trục số."}, {"q": "Khi biểu diễn một số hữu tỉ dương trên trục số, từ 0 ta lấy các phần theo chiều nào?", "a": ["Chiều tăng của trục số", "Chiều giảm của trục số", "Bất kỳ chiều nào", "Không cần xét chiều"], "correct": 0, "exp": "Số hữu tỉ dương được lấy theo chiều tăng của trục số."}, {"q": "Số đối của 2/3 là số nào?", "a": ["-2/3", "2/3", "3/2", "-3/2"], "correct": 0, "exp": "Số đối của a/b là -a/b."}, {"q": "Số đối của 0 là số nào?", "a": ["0", "1", "-1", "Không tồn tại"], "correct": 0, "exp": "Tài liệu nêu rõ: số đối của 0 là 0."}, {"q": "Hai số hữu tỉ đối nhau trên trục số có đặc điểm nào?", "a": ["Nằm hai phía của gốc 0 và cách đều gốc 0", "Cùng nằm bên phải gốc 0", "Cùng nằm bên trái gốc 0", "Luôn bằng nhau"], "correct": 0, "exp": "Đó là mô tả trong phần Số đối của số hữu tỉ."}, {"q": "Muốn so sánh hai số hữu tỉ, tài liệu gợi ý cách nào?", "a": ["Viết dưới dạng phân số có mẫu dương rồi so sánh", "Chỉ so sánh tử số", "Chỉ so sánh mẫu số", "Đổi tất cả thành số nguyên"], "correct": 0, "exp": "Tài liệu hướng dẫn viết chúng dưới dạng phân số có mẫu dương rồi so sánh."}, {"q": "Số 0 được xếp như thế nào?", "a": ["Không là số hữu tỉ dương cũng không là số hữu tỉ âm", "Là số hữu tỉ dương", "Là số hữu tỉ âm", "Không phải số hữu tỉ"], "correct": 0, "exp": "Tài liệu ghi 0 không là số hữu tỉ dương cũng không là số hữu tỉ âm."}, {"q": "Theo tài liệu, số 7/0 có phải là số hữu tỉ không?", "a": ["Không, vì mẫu bằng 0", "Có, vì tử là số nguyên", "Có, vì 7 là số tự nhiên", "Chỉ đúng khi rút gọn"], "correct": 0, "exp": "Phân số dùng để biểu diễn số hữu tỉ phải có mẫu khác 0."}];
+let idx=0, selected=null, score=0, checked=false;
+function render(){
+  selected=null; checked=false;
+  document.getElementById('progress').textContent=`Câu ${idx+1}/${questions.length} • Đúng: ${score}`;
+  document.getElementById('qtitle').textContent=questions[idx].q;
+  const op=document.getElementById('options'); op.innerHTML='';
+  questions[idx].a.forEach((t,i)=>{
+    const b=document.createElement('button'); b.className='option'; b.textContent=String.fromCharCode(65+i)+'. '+t;
+    b.onclick=()=>{if(checked)return; selected=i; document.querySelectorAll('.option').forEach(x=>x.classList.remove('selected')); b.classList.add('selected');};
+    op.appendChild(b);
+  });
+  document.getElementById('feedback').textContent='';
+  document.getElementById('feedback').className='feedback';
+  document.getElementById('checkBtn').disabled=false;
+  document.getElementById('nextBtn').disabled=true;
+}
+function checkAnswer(){
+  if(selected===null){document.getElementById('feedback').textContent='Em hãy chọn một đáp án trước.';return;}
+  if(checked)return; checked=true;
+  const q=questions[idx], fb=document.getElementById('feedback');
+  if(selected===q.correct){score++;fb.textContent='Đúng! '+q.exp;fb.className='feedback correct';}
+  else{fb.textContent='Chưa đúng. Đáp án đúng là '+String.fromCharCode(65+q.correct)+'. '+q.exp;fb.className='feedback wrong';}
+  document.getElementById('progress').textContent=`Câu ${idx+1}/${questions.length} • Đúng: ${score}`;
+  document.getElementById('checkBtn').disabled=true;
+  document.getElementById('nextBtn').disabled=false;
+}
+function nextQuestion(){
+  if(idx<questions.length-1){idx++;render();}
+  else{
+    document.querySelector('.quizbox').innerHTML=`<div class="intro"><h2>HOÀN THÀNH</h2><p style="font-size:22px;font-weight:700">Kết quả: ${score}/${questions.length} câu đúng</p><a class="btn" href="so-huu-ti-quiz.html">Làm lại</a><a class="btn secondary" href="so-huu-ti.html">Về Số hữu tỉ</a></div>`;
+  }
+}
+function restart(){idx=0;score=0;render();}
+render();
+</script>
+</main>
 <footer><strong>LỚP TOÁN CÔ HẠNH DUNG</strong><br>© 2026 – Bản quyền thuộc về Lớp Toán cô Hạnh Dung</footer></body></html>

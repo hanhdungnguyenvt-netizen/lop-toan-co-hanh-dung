@@ -5,15 +5,58 @@ header{background:linear-gradient(135deg,#102a66,#2457a7);color:#fff;text-align:
 header h1{margin:0 0 8px;font-size:34px} header p{margin:4px 0}
 .container{max-width:1080px;margin:30px auto;padding:0 20px}
 .back{display:inline-block;margin-bottom:22px;text-decoration:none;color:#173b78;font-weight:700}
-.intro{text-align:center;margin-bottom:28px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{background:#fff;border-radius:15px;padding:24px 20px;box-shadow:0 5px 18px rgba(0,0,0,.08);text-align:center}
-.card p{color:#53627a;line-height:1.55}.btn{display:inline-block;margin-top:8px;padding:10px 18px;background:#173b78;color:#fff;text-decoration:none;border-radius:7px;font-weight:700}
-.quiz{border-top:4px solid #d69a2d}.lesson{border-top:4px solid #2457a7}.exercise{border-top:4px solid #2f855a}
-.content{background:#fff;border-radius:15px;padding:28px;box-shadow:0 5px 18px rgba(0,0,0,.07);line-height:1.65}
-.placeholder{border:2px dashed #b8c3d6;border-radius:12px;padding:25px;text-align:center;color:#64748b;margin-top:20px}
+.intro{text-align:center;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card,.content{background:#fff;border-radius:15px;padding:24px 20px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+.card{text-align:center}
+.card p,.note{color:#53627a;line-height:1.6}
+.btn{display:inline-block;margin:8px 6px 0;padding:10px 18px;background:#173b78;color:#fff;text-decoration:none;border-radius:7px;font-weight:700}
+.btn.secondary{background:#2f855a}.btn.gold{background:#a66b05}
+.section{margin:24px 0}.section h2{border-bottom:2px solid #e7ecf4;padding-bottom:8px}
+.mathbox{background:#f8fafc;border-left:4px solid #2457a7;padding:15px 18px;border-radius:8px;margin:12px 0;line-height:1.65}
+.exercise{padding:13px 0;border-bottom:1px solid #edf1f6;line-height:1.6}
+.pdfwrap{height:720px;border:1px solid #d8e0ec;border-radius:12px;overflow:hidden;margin-top:18px;background:#fff}
+.pdfwrap iframe{width:100%;height:100%;border:0}
+.quizbox{background:#fff;border-radius:16px;padding:26px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+.qtitle{font-size:21px;font-weight:700;margin-bottom:18px}
+.option{display:block;width:100%;text-align:left;margin:10px 0;padding:13px 14px;border:1px solid #ccd6e5;border-radius:9px;background:#fff;cursor:pointer;font-size:16px}
+.option:hover{background:#f3f7fc}.option.selected{outline:2px solid #2457a7;background:#eef5ff}
+.feedback{margin:14px 0;font-weight:700;min-height:24px}.correct{color:#18733d}.wrong{color:#b42318}
+.progress{margin-bottom:16px;color:#53627a;font-weight:700}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+button{padding:11px 18px;border:0;border-radius:8px;background:#173b78;color:#fff;font-weight:700;cursor:pointer}
+button:disabled{opacity:.5;cursor:not-allowed}
 footer{margin-top:45px;background:#eef2f7;text-align:center;padding:24px 15px;color:#334155}
+@media(max-width:700px){header h1{font-size:29px}.pdfwrap{height:560px}}
 </style></head>
 <body><header><h1>BÀI HỌC – SỐ HỮU TỈ</h1><p>LỚP TOÁN CÔ HẠNH DUNG</p><p>Tư duy sáng tạo – giải hay – học là thích</p></header>
-<main class="container"><a class="back" href="so-huu-ti.html">← Quay lại</a><section class="intro"><h2>BÀI HỌC – SỐ HỮU TỈ</h2><p>Lý thuyết, dạng toán và bài tập luyện tập.</p></section>
-<div class="content"><h3>Nội dung bài học</h3><div class="placeholder">KHU VỰC ĐỂ ĐƯA LÝ THUYẾT, VÍ DỤ VÀ HÌNH MINH HỌA VÀO SAU.</div></div></main>
+<main class="container"><a class="back" href="so-huu-ti.html">← Quay lại</a>
+<section class="intro"><h2>BÀI HỌC – SỐ HỮU TỈ</h2><p>Tóm tắt theo đúng tài liệu gốc, kèm tài liệu đầy đủ để học sinh xem trực tiếp.</p></section>
+<div class="content">
+<div class="section"><h2>1. Khái niệm số hữu tỉ</h2>
+<div class="mathbox">Số hữu tỉ là số viết được dưới dạng phân số <strong>a/b</strong>, với <strong>a, b là số nguyên</strong> và <strong>b ≠ 0</strong>.</div>
+<p>Số 0 cũng là một số hữu tỉ vì có thể viết dưới dạng phân số có tử bằng 0.</p></div>
+
+<div class="section"><h2>2. Biểu diễn số hữu tỉ trên trục số</h2>
+<p>Mỗi số hữu tỉ được biểu diễn bằng một điểm trên trục số. Với một phân số, chia đơn vị thành số phần bằng mẫu số; từ 0 lấy số phần tương ứng với tử số theo chiều tăng nếu số dương, theo chiều giảm nếu số âm.</p></div>
+
+<div class="section"><h2>3. Số đối của số hữu tỉ</h2>
+<div class="mathbox">Số đối của <strong>a/b</strong> là <strong>-a/b</strong>. Số đối của 0 là 0.</div>
+<p>Trên trục số, hai số đối nhau nằm về hai phía của gốc 0 và cách đều gốc 0.</p></div>
+
+<div class="section"><h2>4. So sánh số hữu tỉ</h2>
+<p>Để so sánh hai số hữu tỉ, có thể viết chúng dưới dạng phân số có mẫu dương rồi so sánh. Số hữu tỉ lớn hơn 0 là số hữu tỉ dương; nhỏ hơn 0 là số hữu tỉ âm; số 0 không dương cũng không âm.</p></div>
+
+<div class="section"><h2>5. Nhân, chia số hữu tỉ</h2>
+<p>Tài liệu buổi 5 của cô có phần quy tắc nhân, chia, số nghịch đảo, tính chất phân phối và chú ý dấu của tích/thương.</p>
+<a class="btn secondary" href="so-huu-ti-nhan-chia-buoi-5.pdf" target="_blank">Mở bài giảng nhân – chia</a></div>
+
+<div class="section"><h2>Tài liệu đầy đủ</h2>
+<p class="note">Khung dưới đây hiển thị nguyên tài liệu gốc “Tập hợp số hữu tỉ”, giữ cả hình vẽ và cách trình bày của tài liệu.</p>
+<a class="btn" href="so-huu-ti-tai-lieu-goc.pdf" target="_blank">Mở PDF toàn màn hình</a>
+<a class="btn secondary" href="cac-phep-tinh-so-huu-ti.docx">Tải tài liệu phép tính</a>
+<div class="pdfwrap"><iframe src="so-huu-ti-tai-lieu-goc.pdf"></iframe></div>
+</div>
+</div>
+</main>
 <footer><strong>LỚP TOÁN CÔ HẠNH DUNG</strong><br>© 2026 – Bản quyền thuộc về Lớp Toán cô Hạnh Dung</footer></body></html>
