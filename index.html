@@ -677,9 +677,10 @@ footer strong{
 .info-grid{
   display:grid;
   grid-template-columns:1.3fr 1fr 1fr;
-  gap:20px;
-  margin-top:18px;
+  gap:18px;
   width:100%;
+  max-width:none;
+  margin-top:18px;
   align-items:stretch;
 }
   display:grid;
@@ -696,7 +697,7 @@ footer strong{
   .result-card,
 .review-card,
 .register-card{width:100%;
-  min-height:190px;
+box-sizing:border-box;
   padding:25px;
   border-radius:18px;
   box-shadow:0 6px 22px rgba(0,0,0,.08);
