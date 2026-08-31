@@ -558,7 +558,70 @@ footer strong{
     }
 }
 
-</style>
+/* ===== 4 THONG DIEP BEN PHAI ANH CO ===== */
+
+.teacher-area{
+    position: relative;
+}
+
+.teacher-values{
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 5;
+}
+
+.teacher-value{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    border-radius: 18px;
+    box-shadow: 0 7px 20px rgba(70,40,100,0.12);
+}
+
+.teacher-value .value-icon{
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.teacher-value strong{
+    display: block;
+    font-size: 16px;
+    color: #252044;
+    margin-bottom: 2px;
+}
+
+.teacher-value span{
+    font-size: 13px;
+    color: #555;
+}
+
+.value-pink{ background:#ffe3ee; }
+.value-blue{ background:#e1efff; }
+.value-yellow{ background:#fff1c9; }
+.value-green{ background:#e3f5dc; }
+
+@media (max-width:900px){
+    .teacher-values{
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 18px;
+    }
+} </style>
 </head>
 
 <body>
@@ -690,7 +753,41 @@ footer strong{
   <div class="teacher-photo">
     <img src="anh-bia-co-hanh-dung.png" alt="Cô Hạnh Dung">
 </div>
+<div class="teacher-values">
 
+    <div class="teacher-value value-pink">
+        <div class="value-icon">🌱</div>
+        <div>
+            <strong>Nền tảng vững chắc</strong>
+            <span>Tư duy vượt trội</span>
+        </div>
+    </div>
+
+    <div class="teacher-value value-blue">
+        <div class="value-icon">📘</div>
+        <div>
+            <strong>Phương pháp</strong>
+            <span>Dễ hiểu – dễ nhớ</span>
+        </div>
+    </div>
+
+    <div class="teacher-value value-yellow">
+        <div class="value-icon">🏆</div>
+        <div>
+            <strong>Luyện thi vào 10</strong>
+            <span>Chuyên – Chất lượng</span>
+        </div>
+    </div>
+
+    <div class="teacher-value value-green">
+        <div class="value-icon">🌿</div>
+        <div>
+            <strong>Kết nối phụ huynh</strong>
+            <span>Đồng hành cùng con</span>
+        </div>
+    </div>
+
+</div>
 </section>
 
 
