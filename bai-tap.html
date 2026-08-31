@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bài tập về nhà - Lớp Toán cô Hạnh Dung</title>
+<title>Bài tập - Lớp Toán cô Hạnh Dung</title>
 
 <style>
 
@@ -21,7 +21,6 @@ body{
 }
 
 /* THANH TRÊN */
-
 .topbar{
   background:linear-gradient(90deg,#27155f,#5930a9);
   color:white;
@@ -34,7 +33,6 @@ body{
 }
 
 /* MENU */
-
 nav{
   background:white;
   padding:14px 6%;
@@ -77,7 +75,6 @@ nav{
 }
 
 /* ĐẦU TRANG */
-
 .hero{
   padding:48px 7%;
   text-align:center;
@@ -100,8 +97,7 @@ nav{
   font-size:16px;
 }
 
-/* KHU BÀI TẬP */
-
+/* CÁC NHÓM BÀI TẬP */
 .homework{
   max-width:1180px;
   margin:45px auto;
@@ -127,8 +123,6 @@ nav{
   margin:0 0 22px;
   color:#70637d;
 }
-
-/* 4 LỚP */
 
 .homework-grid{
   display:grid;
@@ -174,8 +168,7 @@ nav{
   background:linear-gradient(90deg,#5930a9,#e3458b);
 }
 
-/* POPUP BÀI TẬP */
-
+/* POPUP */
 .modal{
   display:none;
   position:fixed;
@@ -192,7 +185,7 @@ nav{
 }
 
 .modal-box{
-  width:min(720px,95vw);
+  width:min(760px,95vw);
   max-height:90vh;
   overflow:auto;
   background:white;
@@ -227,8 +220,7 @@ nav{
   margin-bottom:22px;
 }
 
-/* BÀI TẬP MỚI NHẤT */
-
+/* KHUNG BÀI TẬP */
 .latest{
   border-radius:18px;
   padding:20px;
@@ -263,8 +255,6 @@ nav{
   color:#5630a4;
 }
 
-/* NÚT TRONG BÀI */
-
 .action-buttons{
   display:flex;
   gap:10px;
@@ -282,19 +272,18 @@ nav{
   background:linear-gradient(90deg,#5930a9,#e3458b);
 }
 
-.empty{
+.message{
   display:none;
   margin-top:15px;
   padding:13px;
   text-align:center;
-  background:#fff;
+  background:white;
   border-radius:13px;
   color:#b33d75;
   font-weight:700;
 }
 
 /* QUAY VỀ */
-
 .back{
   text-align:center;
   margin:10px 0 50px;
@@ -311,7 +300,6 @@ nav{
 }
 
 /* MOBILE */
-
 @media(max-width:900px){
 
   nav{
@@ -352,16 +340,10 @@ nav{
 
 <body>
 
-
-<!-- THANH TRÊN -->
-
 <div class="topbar">
   <span>⭐ Tư duy sáng tạo – Giải hay – Học là thích</span>
   <span>LỚP TOÁN CÔ HẠNH DUNG</span>
 </div>
-
-
-<!-- MENU -->
 
 <nav>
 
@@ -371,7 +353,6 @@ nav{
   </div>
 
   <div class="menu">
-
     <a href="index.html">TRANG CHỦ</a>
     <a href="gioi-thieu.html">GIỚI THIỆU</a>
     <a href="khoa-hoc.html">KHÓA HỌC</a>
@@ -380,13 +361,9 @@ nav{
     <a href="kiem-tra.html">KIỂM TRA</a>
     <a href="thong-bao.html">THÔNG BÁO</a>
     <a href="lien-he.html">LIÊN HỆ</a>
-
   </div>
 
 </nav>
-
-
-<!-- ĐẦU TRANG -->
 
 <section class="hero">
 
@@ -400,18 +377,16 @@ nav{
 
 </section>
 
-
 <section class="homework">
 
-
-<!-- PHẦN 1 -->
+<!-- 1. TOÁN THCS -->
 
 <div class="homework-group">
 
   <h2>📘 BÀI TẬP TOÁN THCS</h2>
 
   <p>
-    Bài tập về nhà dành cho các lớp Toán 6, 7, 8 và 9.
+    Bài tập về nhà dành cho học sinh Toán 6 đến Toán 9.
   </p>
 
   <div class="homework-grid">
@@ -420,7 +395,7 @@ nav{
       <h3>TOÁN 6</h3>
       <p>Bài tập về nhà Toán 6.</p>
       <button class="btn"
-        onclick="openHomework('TOÁN 6','BÀI TẬP TOÁN THCS')">
+        onclick="openHomework('TOÁN 6','thcs')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -429,7 +404,7 @@ nav{
       <h3>TOÁN 7</h3>
       <p>Bài tập về nhà Toán 7.</p>
       <button class="btn"
-        onclick="openHomework('TOÁN 7','BÀI TẬP TOÁN THCS')">
+        onclick="openHomework('TOÁN 7','thcs')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -438,7 +413,7 @@ nav{
       <h3>TOÁN 8</h3>
       <p>Bài tập về nhà Toán 8.</p>
       <button class="btn"
-        onclick="openHomework('TOÁN 8','BÀI TẬP TOÁN THCS')">
+        onclick="openHomework('TOÁN 8','thcs')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -447,7 +422,7 @@ nav{
       <h3>TOÁN 9</h3>
       <p>Bài tập về nhà Toán 9.</p>
       <button class="btn"
-        onclick="openHomework('TOÁN 9','BÀI TẬP TOÁN THCS')">
+        onclick="openHomework('TOÁN 9','thcs')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -456,51 +431,50 @@ nav{
 
 </div>
 
-
-<!-- PHẦN 2 -->
+<!-- 2. HSG -->
 
 <div class="homework-group">
 
   <h2>🏆 BÀI TẬP BỒI DƯỠNG HỌC SINH GIỎI</h2>
 
   <p>
-    Bài tập nâng cao và bài luyện dành cho học sinh khá giỏi.
+    Bài luyện nâng cao dành cho học sinh khá giỏi.
   </p>
 
   <div class="homework-grid">
 
     <div class="homework-card">
       <h3>HSG TOÁN 6</h3>
-      <p>Bài tập bồi dưỡng HSG 6.</p>
+      <p>Bài tập bồi dưỡng HSG Toán 6.</p>
       <button class="btn"
-        onclick="openHomework('HSG TOÁN 6','BỒI DƯỠNG HỌC SINH GIỎI')">
+        onclick="openHomework('HSG TOÁN 6','hsg')">
         MỞ BÀI TẬP
       </button>
     </div>
 
     <div class="homework-card">
       <h3>HSG TOÁN 7</h3>
-      <p>Bài tập bồi dưỡng HSG 7.</p>
+      <p>Bài tập bồi dưỡng HSG Toán 7.</p>
       <button class="btn"
-        onclick="openHomework('HSG TOÁN 7','BỒI DƯỠNG HỌC SINH GIỎI')">
+        onclick="openHomework('HSG TOÁN 7','hsg')">
         MỞ BÀI TẬP
       </button>
     </div>
 
     <div class="homework-card">
       <h3>HSG TOÁN 8</h3>
-      <p>Bài tập bồi dưỡng HSG 8.</p>
+      <p>Bài tập bồi dưỡng HSG Toán 8.</p>
       <button class="btn"
-        onclick="openHomework('HSG TOÁN 8','BỒI DƯỠNG HỌC SINH GIỎI')">
+        onclick="openHomework('HSG TOÁN 8','hsg')">
         MỞ BÀI TẬP
       </button>
     </div>
 
     <div class="homework-card">
       <h3>HSG TOÁN 9</h3>
-      <p>Bài tập bồi dưỡng HSG 9.</p>
+      <p>Bài tập bồi dưỡng HSG Toán 9.</p>
       <button class="btn"
-        onclick="openHomework('HSG TOÁN 9','BỒI DƯỠNG HỌC SINH GIỎI')">
+        onclick="openHomework('HSG TOÁN 9','hsg')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -509,15 +483,14 @@ nav{
 
 </div>
 
-
-<!-- PHẦN 3 -->
+<!-- 3. CHỮA HỔNG -->
 
 <div class="homework-group">
 
   <h2>🌱 BÀI TẬP CHỮA HỔNG KIẾN THỨC</h2>
 
   <p>
-    Bài tập cơ bản giúp học sinh củng cố lại kiến thức còn yếu.
+    Bài tập cơ bản giúp học sinh củng cố lại phần kiến thức còn yếu.
   </p>
 
   <div class="homework-grid">
@@ -526,7 +499,7 @@ nav{
       <h3>CHỮA HỔNG 6</h3>
       <p>Bài tập củng cố Toán 6.</p>
       <button class="btn"
-        onclick="openHomework('CHỮA HỔNG TOÁN 6','CHỮA HỔNG KIẾN THỨC')">
+        onclick="openHomework('CHỮA HỔNG TOÁN 6','chua')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -535,7 +508,7 @@ nav{
       <h3>CHỮA HỔNG 7</h3>
       <p>Bài tập củng cố Toán 7.</p>
       <button class="btn"
-        onclick="openHomework('CHỮA HỔNG TOÁN 7','CHỮA HỔNG KIẾN THỨC')">
+        onclick="openHomework('CHỮA HỔNG TOÁN 7','chua')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -544,7 +517,7 @@ nav{
       <h3>CHỮA HỔNG 8</h3>
       <p>Bài tập củng cố Toán 8.</p>
       <button class="btn"
-        onclick="openHomework('CHỮA HỔNG TOÁN 8','CHỮA HỔNG KIẾN THỨC')">
+        onclick="openHomework('CHỮA HỔNG TOÁN 8','chua')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -553,7 +526,7 @@ nav{
       <h3>CHỮA HỔNG 9</h3>
       <p>Bài tập củng cố Toán 9.</p>
       <button class="btn"
-        onclick="openHomework('CHỮA HỔNG TOÁN 9','CHỮA HỔNG KIẾN THỨC')">
+        onclick="openHomework('CHỮA HỔNG TOÁN 9','chua')">
         MỞ BÀI TẬP
       </button>
     </div>
@@ -563,7 +536,6 @@ nav{
 </div>
 
 </section>
-
 
 <!-- POPUP -->
 
@@ -576,7 +548,6 @@ nav{
     <h2 id="homeworkTitle">BÀI TẬP</h2>
 
     <div class="category" id="homeworkCategory"></div>
-
 
     <div class="latest">
 
@@ -605,17 +576,17 @@ nav{
 
       <div class="action-buttons">
 
-        <button onclick="showEmpty()">
+        <button onclick="showHomeworkMessage()">
           📄 XEM BÀI TẬP
         </button>
 
-        <button onclick="showEmpty()">
+        <button onclick="showHomeworkMessage()">
           ⬇ TẢI PDF
         </button>
 
       </div>
 
-      <div class="empty" id="emptyMessage">
+      <div class="message" id="homeworkMessage">
         Bài tập đang được cô cập nhật.
       </div>
 
@@ -625,19 +596,57 @@ nav{
 
 </div>
 
-
 <div class="back">
-
   <a href="index.html">
     ← QUAY VỀ TRANG CHỦ
   </a>
-
 </div>
-
 
 <script>
 
-function openHomework(title,category){
+function openHomework(title,type){
 
   document.getElementById("homeworkTitle").textContent =
-    "BÀI TẬP VỀ
+    "BÀI TẬP VỀ NHÀ - " + title;
+
+  if(type==="thcs"){
+    document.getElementById("homeworkCategory").textContent =
+      "BÀI TẬP TOÁN THCS";
+  }
+
+  if(type==="hsg"){
+    document.getElementById("homeworkCategory").textContent =
+      "BỒI DƯỠNG HỌC SINH GIỎI";
+  }
+
+  if(type==="chua"){
+    document.getElementById("homeworkCategory").textContent =
+      "CHỮA HỔNG KIẾN THỨC";
+  }
+
+  document.getElementById("latestTitle").textContent =
+    "Chưa có bài tập mới";
+
+  document.getElementById("homeworkMessage").style.display="none";
+
+  document.getElementById("homeworkModal").classList.add("show");
+}
+
+function closeHomework(){
+  document.getElementById("homeworkModal").classList.remove("show");
+}
+
+function showHomeworkMessage(){
+  document.getElementById("homeworkMessage").style.display="block";
+}
+
+document.getElementById("homeworkModal").addEventListener("click",function(e){
+  if(e.target===this){
+    closeHomework();
+  }
+});
+
+</script>
+
+</body>
+</html>
