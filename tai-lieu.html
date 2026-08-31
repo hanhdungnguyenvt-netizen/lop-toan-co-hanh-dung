@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tài liệu - Lớp Toán cô Hạnh Dung</title>
+
+<style>
+
+/* ===== CÀI ĐẶT CHUNG ===== */
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#29244f;
+  background:#fffafd;
+  line-height:1.6;
+}
+
+/* ===== THANH TRÊN ===== */
+
+.topbar{
+  background:linear-gradient(90deg,#27155f,#5930a9);
+  color:white;
+  padding:9px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  font-size:13px;
+}
+
+/* ===== MENU ===== */
+
+nav{
+  background:white;
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);
+}
+
+.logo{
+  font-weight:800;
+  color:#45268f;
+  line-height:1.15;
+  white-space:nowrap;
+}
+
+.logo span{
+  display:block;
+  color:#e3458b;
+}
+
+.menu{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#29244f;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.menu a:hover,
+.menu .active{
+  color:#e3458b;
+}
+
+/* ===== ĐẦU TRANG ===== */
+
+.hero{
+  padding:48px 7%;
+  text-align:center;
+
+  background:
+    radial-gradient(circle at 15% 20%,#ffffff,transparent 25%),
+    radial-gradient(circle at 82% 20%,#ffddec,transparent 28%),
+    linear-gradient(125deg,#fff9fc,#f2eaff,#ffedf5);
+}
+
+.hero h1{
+  margin:0 0 10px;
+  color:#45268f;
+  font-size:40px;
+}
+
+.hero p{
+  max-width:780px;
+  margin:auto;
+  color:#70637d;
+  font-size:16px;
+}
+
+/* ===== TOÀN BỘ KHU TÀI LIỆU ===== */
+
+.documents{
+  max-width:1180px;
+  margin:45px auto;
+  padding:0 25px;
+}
+
+/* ===== TỪNG NHÓM ===== */
+
+.document-group{
+  background:white;
+  border-radius:24px;
+  padding:28px;
+  margin-bottom:28px;
+  box-shadow:0 8px 26px rgba(72,42,120,.08);
+  border:1px solid #f3e9f1;
+}
+
+.document-group h2{
+  margin:0 0 7px;
+  color:#5630a4;
+  font-size:25px;
+}
+
+.document-group > p{
+  margin:0 0 22px;
+  color:#70637d;
+}
+
+/* ===== 4 KHỐI ===== */
+
+.document-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.document-card{
+  background:linear-gradient(145deg,#fffafd,#f7f0ff);
+  border:1px solid #eee2f4;
+  border-radius:18px;
+  padding:23px 15px;
+  text-align:center;
+  transition:.2s;
+}
+
+.document-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(70,45,120,.10);
+}
+
+.document-card h3{
+  margin:0 0 9px;
+  color:#e3458b;
+  font-size:20px;
+}
+
+.document-card p{
+  min-height:42px;
+  margin:0 0 14px;
+  color:#71677b;
+  font-size:14px;
+}
+
+/* ===== NÚT MỞ ===== */
+
+.btn{
+  display:inline-block;
+  border:0;
+  cursor:pointer;
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+  font-size:13px;
+  padding:10px 18px;
+  border-radius:22px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* ===== CỬA SỔ TÀI LIỆU ===== */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(35,24,65,.38);
+  padding:20px;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(720px,95vw);
+  max-height:90vh;
+  overflow:auto;
+  background:white;
+  border-radius:25px;
+  padding:30px;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.20);
+}
+
+.close{
+  position:absolute;
+  top:13px;
+  right:15px;
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:#f3eafa;
+  color:#5630a4;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.modal-box h2{
+  margin:0 45px 5px 0;
+  color:#5630a4;
+}
+
+.modal-subtitle{
+  color:#e3458b;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+/* ===== 5 MỤC TÀI LIỆU ===== */
+
+.file-list{
+  display:grid;
+  gap:12px;
+}
+
+.file-item{
+  background:#fff8fc;
+  border:1px solid #f2e5ef;
+  border-radius:16px;
+  padding:15px 17px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.file-info{
+  text-align:left;
+}
+
+.file-info strong{
+  display:block;
+  color:#45268f;
+  margin-bottom:3px;
+}
+
+.file-info span{
+  color:#807587;
+  font-size:13px;
+}
+
+.file-button{
+  flex-shrink:0;
+  border:0;
+  cursor:pointer;
+  background:#f1e8fa;
+  color:#5630a4;
+  font-weight:700;
+  padding:9px 14px;
+  border-radius:18px;
+}
+
+/* ===== THÔNG BÁO CHƯA CÓ FILE ===== */
+
+.empty-message{
+  display:none;
+  margin-top:18px;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  background:#fff0f7;
+  color:#b33d75;
+  font-weight:700;
+}
+
+/* ===== QUAY VỀ ===== */
+
+.back{
+  text-align:center;
+  margin:10px 0 50px;
+}
+
+.back a{
+  display:inline-block;
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+  padding:11px 25px;
+  border-radius:24px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* ===== ĐIỆN THOẠI ===== */
+
+@media(max-width:900px){
+
+  nav{
+    display:block;
+  }
+
+  .logo{
+    margin-bottom:13px;
+  }
+
+  .menu{
+    overflow-x:auto;
+    gap:20px;
+  }
+
+  .document-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:31px;
+  }
+}
+
+@media(max-width:600px){
+
+  .document-grid{
+    grid-template-columns:1fr;
+  }
+
+  .file-item{
+    display:block;
+  }
+
+  .file-button{
+    margin-top:10px;
+  }
+
+  .topbar{
+    font-size:11px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- THANH TRÊN -->
+
+<div class="topbar">
+
+  <span>
+    ⭐ Tư duy sáng tạo – Giải hay – Học là thích
+  </span>
+
+  <span>
+    LỚP TOÁN CÔ HẠNH DUNG
+  </span>
+
+</div>
+
+
+<!-- MENU -->
+
+<nav>
+
+  <div class="logo">
+    LỚP TOÁN
+    <span>CÔ HẠNH DUNG</span>
+  </div>
+
+  <div class="menu">
+
+    <a href="index.html">TRANG CHỦ</a>
+
+    <a href="gioi-thieu.html">
+      GIỚI THIỆU
+    </a>
+
+    <a href="khoa-hoc.html">
+      KHÓA HỌC
+    </a>
+
+    <a href="tai-lieu.html" class="active">
+      TÀI LIỆU
+    </a>
+
+    <a href="bai-tap.html">
+      BÀI TẬP
+    </a>
+
+    <a href="kiem-tra.html">
+      KIỂM TRA
+    </a>
+
+    <a href="thong-bao.html">
+      THÔNG BÁO
+    </a>
+
+    <a href="lien-he.html">
+      LIÊN HỆ
+    </a>
+
+  </div>
+
+</nav>
+
+
+<!-- ĐẦU TRANG -->
+
+<section class="hero">
+
+  <h1>📚 TÀI LIỆU HỌC TẬP</h1>
+
+  <p>
+    Tài liệu Toán THCS được sắp xếp theo từng khối lớp,
+    phục vụ học tập, ôn luyện, bồi dưỡng học sinh giỏi
+    và củng cố kiến thức.
+  </p>
+
+</section>
+
+
+<section class="documents">
+
+
+<!-- ======================================== -->
+<!-- 1. TÀI LIỆU TOÁN THCS -->
+<!-- ======================================== -->
+
+<div class="document-group">
+
+  <h2>📘 TÀI LIỆU TOÁN THCS</h2>
+
+  <p>
+    Tài liệu học tập từ cơ bản đến nâng cao dành cho học sinh lớp 6–9.
+  </p>
+
+  <div class="document-grid">
+
+    <div class="document-card">
+      <h3>TOÁN 6</h3>
+      <p>Tài liệu học tập Toán 6.</p>
+      <button class="btn"
+        onclick="openDocuments('TOÁN 6','TÀI LIỆU TOÁN THCS')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>TOÁN 7</h3>
+      <p>Tài liệu học tập Toán 7.</p>
+      <button class="btn"
+        onclick="openDocuments('TOÁN 7','TÀI LIỆU TOÁN THCS')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>TOÁN 8</h3>
+      <p>Tài liệu học tập Toán 8.</p>
+      <button class="btn"
+        onclick="openDocuments('TOÁN 8','TÀI LIỆU TOÁN THCS')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>TOÁN 9</h3>
+      <p>Tài liệu học tập Toán 9.</p>
+      <button class="btn"
+        onclick="openDocuments('TOÁN 9','TÀI LIỆU TOÁN THCS')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================== -->
+<!-- 2. TÀI LIỆU BỒI DƯỠNG HSG -->
+<!-- ======================================== -->
+
+<div class="document-group">
+
+  <h2>🏆 TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI</h2>
+
+  <p>
+    Chuyên đề và tài liệu nâng cao dành cho học sinh khá giỏi.
+  </p>
+
+  <div class="document-grid">
+
+    <div class="document-card">
+      <h3>HSG TOÁN 6</h3>
+      <p>Tài liệu bồi dưỡng HSG Toán 6.</p>
+      <button class="btn"
+        onclick="openDocuments('HSG TOÁN 6','TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>HSG TOÁN 7</h3>
+      <p>Tài liệu bồi dưỡng HSG Toán 7.</p>
+      <button class="btn"
+        onclick="openDocuments('HSG TOÁN 7','TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>HSG TOÁN 8</h3>
+      <p>Tài liệu bồi dưỡng HSG Toán 8.</p>
+      <button class="btn"
+        onclick="openDocuments('HSG TOÁN 8','TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>HSG TOÁN 9</h3>
+      <p>Tài liệu bồi dưỡng HSG Toán 9.</p>
+      <button class="btn"
+        onclick="openDocuments('HSG TOÁN 9','TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================== -->
+<!-- 3. TÀI LIỆU CHỮA HỔNG -->
+<!-- ======================================== -->
+
+<div class="document-group">
+
+  <h2>🌱 TÀI LIỆU CHỮA HỔNG KIẾN THỨC</h2>
+
+  <p>
+    Hệ thống tài liệu giúp học sinh củng cố lại nền tảng
+    và từng bước theo kịp chương trình.
+  </p>
+
+  <div class="document-grid">
+
+    <div class="document-card">
+      <h3>CHỮA HỔNG TOÁN 6</h3>
+      <p>Củng cố kiến thức nền tảng Toán 6.</p>
+      <button class="btn"
+        onclick="openDocuments('CHỮA HỔNG TOÁN 6','TÀI LIỆU CHỮA HỔNG KIẾN THỨC')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>CHỮA HỔNG TOÁN 7</h3>
+      <p>Củng cố kiến thức nền tảng Toán 7.</p>
+      <button class="btn"
+        onclick="openDocuments('CHỮA HỔNG TOÁN 7','TÀI LIỆU CHỮA HỔNG KIẾN THỨC')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>CHỮA HỔNG TOÁN 8</h3>
+      <p>Củng cố kiến thức nền tảng Toán 8.</p>
+      <button class="btn"
+        onclick="openDocuments('CHỮA HỔNG TOÁN 8','TÀI LIỆU CHỮA HỔNG KIẾN THỨC')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+    <div class="document-card">
+      <h3>CHỮA HỔNG TOÁN 9</h3>
+      <p>Củng cố kiến thức nền tảng Toán 9.</p>
+      <button class="btn"
+        onclick="openDocuments('CHỮA HỔNG TOÁN 9','TÀI LIỆU CHỮA HỔNG KIẾN THỨC')">
+        MỞ TÀI LIỆU
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ======================================== -->
+<!-- CỬA SỔ MỞ TÀI LIỆU -->
+<!-- ======================================== -->
+
+<div class="modal" id="documentModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeDocuments()">
+      ×
+    </button>
+
+    <h2 id="documentTitle">
+      TÀI LIỆU
+    </h2>
+
+    <div class="modal-subtitle"
+         id="documentCategory">
+    </div>
+
+
+    <div class="file-list">
+
+
+      <div class="file-item">
+
+        <div class="file-info">
+          <strong>📖 LÝ THUYẾT</strong>
+          <span>
+            Kiến thức trọng tâm và nội dung cần nhớ
+          </span>
+        </div>
+
+        <button class="file-button"
+                onclick="no
