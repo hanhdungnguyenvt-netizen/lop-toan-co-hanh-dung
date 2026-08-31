@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Giới thiệu - Lớp Toán cô Hạnh Dung</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#29244f;
+  background:#fffafd;
+}
+
+/* THANH TRÊN */
+.topbar{
+  background:linear-gradient(90deg,#27155f,#5930a9);
+  color:white;
+  padding:9px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+}
+
+/* MENU */
+nav{
+  background:white;
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);
+}
+
+.logo{
+  font-weight:800;
+  color:#45268f;
+  line-height:1.15;
+  white-space:nowrap;
+}
+
+.logo span{
+  display:block;
+  color:#e3458b;
+}
+
+.menu{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#29244f;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.menu a:hover,
+.menu .active{
+  color:#e3458b;
+}
+
+/* TIÊU ĐỀ */
+.hero{
+  padding:48px 7%;
+  text-align:center;
+  background:
+    radial-gradient(circle at 15% 20%,#ffffff,transparent 25%),
+    radial-gradient(circle at 82% 20%,#ffddec,transparent 28%),
+    linear-gradient(125deg,#fff9fc,#f2eaff,#ffedf5);
+}
+
+.hero h1{
+  margin:0 0 8px;
+  color:#45268f;
+  font-size:38px;
+}
+
+.hero p{
+  margin:0;
+  color:#70637d;
+}
+
+/* PROFILE */
+.profile{
+  max-width:1100px;
+  margin:45px auto;
+  padding:0 25px;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:35px;
+  align-items:stretch;
+}
+
+.photo{
+  min-height:430px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#f3eaff,#ffe8f2);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#826e92;
+  box-shadow:0 8px 25px rgba(72,42,120,.08);
+}
+
+.info{
+  background:white;
+  border-radius:24px;
+  padding:34px;
+  box-shadow:0 8px 25px rgba(72,42,120,.08);
+}
+
+.info h2{
+  margin:0;
+  color:#e3458b;
+  font-size:30px;
+}
+
+.teacher{
+  color:#5630a4;
+  font-weight:700;
+  margin-top:5px;
+  margin-bottom:25px;
+}
+
+.item{
+  padding:12px 0;
+  border-bottom:1px solid #f1e9f0;
+  font-size:16px;
+}
+
+.message{
+  margin-top:25px;
+  padding:20px;
+  border-radius:16px;
+  background:#fff4f9;
+  line-height:1.7;
+}
+
+.slogan{
+  text-align:center;
+  margin-top:22px;
+  color:#5630a4;
+  font-weight:800;
+  font-size:18px;
+}
+
+/* NÚT */
+.back{
+  text-align:center;
+  margin:10px 0 50px;
+}
+
+.back a{
+  display:inline-block;
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+  padding:11px 25px;
+  border-radius:24px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  nav{
+    display:block;
+  }
+
+  .logo{
+    margin-bottom:13px;
+  }
+
+  .menu{
+    overflow-x:auto;
+    gap:20px;
+  }
+
+  .profile{
+    grid-template-columns:1fr;
+  }
+
+  .photo{
+    min-height:280px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="topbar">
+  <span>⭐ Tư duy sáng tạo – Giải hay – Học là thích</span>
+  <span>LỚP TOÁN CÔ HẠNH DUNG</span>
+</div>
+
+
+<nav>
+
+  <div class="logo">
+    LỚP TOÁN
+    <span>CÔ HẠNH DUNG</span>
+  </div>
+
+  <div class="menu">
+    <a href="index.html">TRANG CHỦ</a>
+    <a href="gioi-thieu.html" class="active">GIỚI THIỆU</a>
+    <a href="khoa-hoc.html">KHÓA HỌC</a>
+    <a href="tai-lieu.html">TÀI LIỆU</a>
+    <a href="bai-tap.html">BÀI TẬP</a>
+    <a href="kiem-tra.html">KIỂM TRA</a>
+    <a href="thong-bao.html">THÔNG BÁO</a>
+    <a href="lien-he.html">LIÊN HỆ</a>
+  </div>
+
+</nav>
+
+
+<section class="hero">
+
+  <h1>GIỚI THIỆU</h1>
+
+  <p>
+    Đồng hành cùng học sinh trên hành trình
+    học Toán – hiểu Toán – yêu Toán.
+  </p>
+
+</section>
+
+
+<section class="profile">
+
+  <div class="photo">
+
+    <div>
+      <strong>ẢNH CÔ HẠNH DUNG</strong><br>
+      <small>Ảnh cô giáo sẽ được đặt tại đây</small>
+    </div>
+
+  </div>
+
+
+  <div class="info">
+
+    <h2>CÔ NGUYỄN HẠNH DUNG</h2>
+
+    <div class="teacher">
+      GIÁO VIÊN TOÁN THCS
+    </div>
+
+    <div class="item">
+      🎓 <strong>Chuyên môn:</strong>
+      Tốt nghiệp Đại học Sư phạm Toán
+    </div>
+
+    <div class="item">
+      📚 <strong>Kinh nghiệm:</strong>
+      Hơn 25 năm giảng dạy môn Toán THCS
+    </div>
+
+    <div class="item">
+      🏆 <strong>Thành tích:</strong>
+      Từng đạt Giải Nhất Giáo viên giỏi
+    </div>
+
+    <div class="item">
+      🎯 <strong>Chuyên môn giảng dạy:</strong>
+      Củng cố kiến thức – phát triển tư duy –
+      bồi dưỡng học sinh khá giỏi
+    </div>
+
+    <div class="item">
+      👩‍🏫 <strong>Đồng hành:</strong>
+      Đã giảng dạy và đồng hành cùng nhiều thế hệ học sinh
+    </div>
+
+
+    <div class="message">
+
+      Với cô Hạnh Dung, học Toán không chỉ là tìm ra đáp số.
+      Điều quan trọng hơn là giúp học sinh hiểu bản chất,
+      hình thành phương pháp tư duy và từng bước xây dựng
+      sự tự tin khi giải quyết các bài toán.
+
+    </div>
+
+
+    <div class="slogan">
+      “Tư duy sáng tạo – Giải hay – Học là thích”
+    </div>
+
+  </div>
+
+</section>
+
+
+<div class="back">
+  <a href="index.html">
+    ← QUAY VỀ TRANG CHỦ
+  </a>
+</div>
+
+
+</body>
+</html>
