@@ -7,9 +7,6 @@
 <title>Tài liệu - Lớp Toán cô Hạnh Dung</title>
 
 <style>
-
-/* ===== CÀI ĐẶT CHUNG ===== */
-
 *{
   box-sizing:border-box;
 }
@@ -22,8 +19,7 @@ body{
   line-height:1.6;
 }
 
-/* ===== THANH TRÊN ===== */
-
+/* THANH TRÊN */
 .topbar{
   background:linear-gradient(90deg,#27155f,#5930a9);
   color:white;
@@ -35,8 +31,7 @@ body{
   font-size:13px;
 }
 
-/* ===== MENU ===== */
-
+/* MENU */
 nav{
   background:white;
   padding:14px 6%;
@@ -78,12 +73,10 @@ nav{
   color:#e3458b;
 }
 
-/* ===== ĐẦU TRANG ===== */
-
+/* ĐẦU TRANG */
 .hero{
   padding:48px 7%;
   text-align:center;
-
   background:
     radial-gradient(circle at 15% 20%,#ffffff,transparent 25%),
     radial-gradient(circle at 82% 20%,#ffddec,transparent 28%),
@@ -97,21 +90,18 @@ nav{
 }
 
 .hero p{
-  max-width:780px;
+  max-width:800px;
   margin:auto;
   color:#70637d;
   font-size:16px;
 }
 
-/* ===== TOÀN BỘ KHU TÀI LIỆU ===== */
-
+/* CÁC NHÓM TÀI LIỆU */
 .documents{
   max-width:1180px;
   margin:45px auto;
   padding:0 25px;
 }
-
-/* ===== TỪNG NHÓM ===== */
 
 .document-group{
   background:white;
@@ -132,8 +122,6 @@ nav{
   margin:0 0 22px;
   color:#70637d;
 }
-
-/* ===== 4 KHỐI ===== */
 
 .document-grid{
   display:grid;
@@ -168,13 +156,9 @@ nav{
   font-size:14px;
 }
 
-/* ===== NÚT MỞ ===== */
-
 .btn{
-  display:inline-block;
   border:0;
   cursor:pointer;
-  text-decoration:none;
   color:white;
   font-weight:700;
   font-size:13px;
@@ -183,17 +167,16 @@ nav{
   background:linear-gradient(90deg,#5930a9,#e3458b);
 }
 
-/* ===== CỬA SỔ TÀI LIỆU ===== */
-
+/* POPUP */
 .modal{
   display:none;
   position:fixed;
   inset:0;
   z-index:9999;
-  background:rgba(35,24,65,.38);
-  padding:20px;
+  background:rgba(35,24,65,.40);
   align-items:center;
   justify-content:center;
+  padding:20px;
 }
 
 .modal.show{
@@ -201,7 +184,7 @@ nav{
 }
 
 .modal-box{
-  width:min(720px,95vw);
+  width:min(760px,95vw);
   max-height:90vh;
   overflow:auto;
   background:white;
@@ -230,46 +213,41 @@ nav{
   color:#5630a4;
 }
 
-.modal-subtitle{
+.category{
   color:#e3458b;
   font-weight:700;
   margin-bottom:22px;
 }
 
-/* ===== 5 MỤC TÀI LIỆU ===== */
-
-.file-list{
+/* CÁC MỤC TÀI LIỆU */
+.folder-list{
   display:grid;
   gap:12px;
 }
 
-.file-item{
+.folder{
   background:#fff8fc;
   border:1px solid #f2e5ef;
   border-radius:16px;
-  padding:15px 17px;
+  padding:16px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:15px;
 }
 
-.file-info{
-  text-align:left;
-}
-
-.file-info strong{
+.folder-info strong{
   display:block;
   color:#45268f;
   margin-bottom:3px;
 }
 
-.file-info span{
-  color:#807587;
+.folder-info span{
   font-size:13px;
+  color:#817488;
 }
 
-.file-button{
+.folder button{
   flex-shrink:0;
   border:0;
   cursor:pointer;
@@ -280,21 +258,18 @@ nav{
   border-radius:18px;
 }
 
-/* ===== THÔNG BÁO CHƯA CÓ FILE ===== */
-
-.empty-message{
+.message{
   display:none;
   margin-top:18px;
   padding:15px;
-  border-radius:15px;
   text-align:center;
+  border-radius:15px;
   background:#fff0f7;
   color:#b33d75;
   font-weight:700;
 }
 
-/* ===== QUAY VỀ ===== */
-
+/* QUAY VỀ */
 .back{
   text-align:center;
   margin:10px 0 50px;
@@ -310,8 +285,7 @@ nav{
   background:linear-gradient(90deg,#5930a9,#e3458b);
 }
 
-/* ===== ĐIỆN THOẠI ===== */
-
+/* MOBILE */
 @media(max-width:900px){
 
   nav{
@@ -342,11 +316,11 @@ nav{
     grid-template-columns:1fr;
   }
 
-  .file-item{
+  .folder{
     display:block;
   }
 
-  .file-button{
+  .folder button{
     margin-top:10px;
   }
 
@@ -354,29 +328,15 @@ nav{
     font-size:11px;
   }
 }
-
 </style>
 </head>
 
-
 <body>
 
-<!-- THANH TRÊN -->
-
 <div class="topbar">
-
-  <span>
-    ⭐ Tư duy sáng tạo – Giải hay – Học là thích
-  </span>
-
-  <span>
-    LỚP TOÁN CÔ HẠNH DUNG
-  </span>
-
+  <span>⭐ Tư duy sáng tạo – Giải hay – Học là thích</span>
+  <span>LỚP TOÁN CÔ HẠNH DUNG</span>
 </div>
-
-
-<!-- MENU -->
 
 <nav>
 
@@ -386,43 +346,17 @@ nav{
   </div>
 
   <div class="menu">
-
     <a href="index.html">TRANG CHỦ</a>
-
-    <a href="gioi-thieu.html">
-      GIỚI THIỆU
-    </a>
-
-    <a href="khoa-hoc.html">
-      KHÓA HỌC
-    </a>
-
-    <a href="tai-lieu.html" class="active">
-      TÀI LIỆU
-    </a>
-
-    <a href="bai-tap.html">
-      BÀI TẬP
-    </a>
-
-    <a href="kiem-tra.html">
-      KIỂM TRA
-    </a>
-
-    <a href="thong-bao.html">
-      THÔNG BÁO
-    </a>
-
-    <a href="lien-he.html">
-      LIÊN HỆ
-    </a>
-
+    <a href="gioi-thieu.html">GIỚI THIỆU</a>
+    <a href="khoa-hoc.html">KHÓA HỌC</a>
+    <a href="tai-lieu.html" class="active">TÀI LIỆU</a>
+    <a href="bai-tap.html">BÀI TẬP</a>
+    <a href="kiem-tra.html">KIỂM TRA</a>
+    <a href="thong-bao.html">THÔNG BÁO</a>
+    <a href="lien-he.html">LIÊN HỆ</a>
   </div>
 
 </nav>
-
-
-<!-- ĐẦU TRANG -->
 
 <section class="hero">
 
@@ -436,13 +370,9 @@ nav{
 
 </section>
 
-
 <section class="documents">
 
-
-<!-- ======================================== -->
-<!-- 1. TÀI LIỆU TOÁN THCS -->
-<!-- ======================================== -->
+<!-- 1. TOÁN THCS -->
 
 <div class="document-group">
 
@@ -458,7 +388,7 @@ nav{
       <h3>TOÁN 6</h3>
       <p>Tài liệu học tập Toán 6.</p>
       <button class="btn"
-        onclick="openDocuments('TOÁN 6','TÀI LIỆU TOÁN THCS')">
+        onclick="openDocument('TOÁN 6','thcs')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -467,7 +397,7 @@ nav{
       <h3>TOÁN 7</h3>
       <p>Tài liệu học tập Toán 7.</p>
       <button class="btn"
-        onclick="openDocuments('TOÁN 7','TÀI LIỆU TOÁN THCS')">
+        onclick="openDocument('TOÁN 7','thcs')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -476,7 +406,7 @@ nav{
       <h3>TOÁN 8</h3>
       <p>Tài liệu học tập Toán 8.</p>
       <button class="btn"
-        onclick="openDocuments('TOÁN 8','TÀI LIỆU TOÁN THCS')">
+        onclick="openDocument('TOÁN 8','thcs')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -485,7 +415,7 @@ nav{
       <h3>TOÁN 9</h3>
       <p>Tài liệu học tập Toán 9.</p>
       <button class="btn"
-        onclick="openDocuments('TOÁN 9','TÀI LIỆU TOÁN THCS')">
+        onclick="openDocument('TOÁN 9','thcs')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -494,10 +424,7 @@ nav{
 
 </div>
 
-
-<!-- ======================================== -->
-<!-- 2. TÀI LIỆU BỒI DƯỠNG HSG -->
-<!-- ======================================== -->
+<!-- 2. HSG -->
 
 <div class="document-group">
 
@@ -513,7 +440,7 @@ nav{
       <h3>HSG TOÁN 6</h3>
       <p>Tài liệu bồi dưỡng HSG Toán 6.</p>
       <button class="btn"
-        onclick="openDocuments('HSG TOÁN 6','TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI')">
+        onclick="openDocument('HSG TOÁN 6','hsg')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -522,7 +449,7 @@ nav{
       <h3>HSG TOÁN 7</h3>
       <p>Tài liệu bồi dưỡng HSG Toán 7.</p>
       <button class="btn"
-        onclick="openDocuments('HSG TOÁN 7','TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI')">
+        onclick="openDocument('HSG TOÁN 7','hsg')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -531,7 +458,7 @@ nav{
       <h3>HSG TOÁN 8</h3>
       <p>Tài liệu bồi dưỡng HSG Toán 8.</p>
       <button class="btn"
-        onclick="openDocuments('HSG TOÁN 8','TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI')">
+        onclick="openDocument('HSG TOÁN 8','hsg')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -540,7 +467,7 @@ nav{
       <h3>HSG TOÁN 9</h3>
       <p>Tài liệu bồi dưỡng HSG Toán 9.</p>
       <button class="btn"
-        onclick="openDocuments('HSG TOÁN 9','TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI')">
+        onclick="openDocument('HSG TOÁN 9','hsg')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -549,10 +476,7 @@ nav{
 
 </div>
 
-
-<!-- ======================================== -->
-<!-- 3. TÀI LIỆU CHỮA HỔNG -->
-<!-- ======================================== -->
+<!-- 3. CHỮA HỔNG -->
 
 <div class="document-group">
 
@@ -566,37 +490,37 @@ nav{
   <div class="document-grid">
 
     <div class="document-card">
-      <h3>CHỮA HỔNG TOÁN 6</h3>
-      <p>Củng cố kiến thức nền tảng Toán 6.</p>
+      <h3>CHỮA HỔNG 6</h3>
+      <p>Tài liệu củng cố Toán 6.</p>
       <button class="btn"
-        onclick="openDocuments('CHỮA HỔNG TOÁN 6','TÀI LIỆU CHỮA HỔNG KIẾN THỨC')">
+        onclick="openDocument('CHỮA HỔNG TOÁN 6','chua')">
         MỞ TÀI LIỆU
       </button>
     </div>
 
     <div class="document-card">
-      <h3>CHỮA HỔNG TOÁN 7</h3>
-      <p>Củng cố kiến thức nền tảng Toán 7.</p>
+      <h3>CHỮA HỔNG 7</h3>
+      <p>Tài liệu củng cố Toán 7.</p>
       <button class="btn"
-        onclick="openDocuments('CHỮA HỔNG TOÁN 7','TÀI LIỆU CHỮA HỔNG KIẾN THỨC')">
+        onclick="openDocument('CHỮA HỔNG TOÁN 7','chua')">
         MỞ TÀI LIỆU
       </button>
     </div>
 
     <div class="document-card">
-      <h3>CHỮA HỔNG TOÁN 8</h3>
-      <p>Củng cố kiến thức nền tảng Toán 8.</p>
+      <h3>CHỮA HỔNG 8</h3>
+      <p>Tài liệu củng cố Toán 8.</p>
       <button class="btn"
-        onclick="openDocuments('CHỮA HỔNG TOÁN 8','TÀI LIỆU CHỮA HỔNG KIẾN THỨC')">
+        onclick="openDocument('CHỮA HỔNG TOÁN 8','chua')">
         MỞ TÀI LIỆU
       </button>
     </div>
 
     <div class="document-card">
-      <h3>CHỮA HỔNG TOÁN 9</h3>
-      <p>Củng cố kiến thức nền tảng Toán 9.</p>
+      <h3>CHỮA HỔNG 9</h3>
+      <p>Tài liệu củng cố Toán 9.</p>
       <button class="btn"
-        onclick="openDocuments('CHỮA HỔNG TOÁN 9','TÀI LIỆU CHỮA HỔNG KIẾN THỨC')">
+        onclick="openDocument('CHỮA HỔNG TOÁN 9','chua')">
         MỞ TÀI LIỆU
       </button>
     </div>
@@ -607,39 +531,122 @@ nav{
 
 </section>
 
-
-<!-- ======================================== -->
-<!-- CỬA SỔ MỞ TÀI LIỆU -->
-<!-- ======================================== -->
+<!-- POPUP -->
 
 <div class="modal" id="documentModal">
 
   <div class="modal-box">
 
-    <button class="close" onclick="closeDocuments()">
-      ×
-    </button>
+    <button class="close" onclick="closeDocument()">×</button>
 
-    <h2 id="documentTitle">
-      TÀI LIỆU
-    </h2>
+    <h2 id="documentTitle">TÀI LIỆU</h2>
 
-    <div class="modal-subtitle"
-         id="documentCategory">
+    <div class="category" id="documentCategory"></div>
+
+    <div class="folder-list" id="folderList"></div>
+
+    <div class="message" id="documentMessage">
+      Tài liệu đang được cô cập nhật.
     </div>
 
+  </div>
 
-    <div class="file-list">
+</div>
 
+<div class="back">
+  <a href="index.html">
+    ← QUAY VỀ TRANG CHỦ
+  </a>
+</div>
 
-      <div class="file-item">
+<script>
 
-        <div class="file-info">
-          <strong>📖 LÝ THUYẾT</strong>
-          <span>
-            Kiến thức trọng tâm và nội dung cần nhớ
-          </span>
-        </div>
+const documentFolders = {
 
-        <button class="file-button"
-                onclick="no
+  thcs:[
+    ["📖 LÝ THUYẾT","Kiến thức trọng tâm và nội dung cần nhớ."],
+    ["📚 CHUYÊN ĐỀ","Tài liệu theo từng chuyên đề Toán."],
+    ["📝 PHIẾU HỌC TẬP","Phiếu luyện tập và tài liệu học trên lớp."],
+    ["🔄 ÔN TẬP","Tài liệu ôn tập theo bài, chương và học kỳ."],
+    ["📄 PDF TÀI LIỆU","Các file PDF tài liệu học tập."]
+  ],
+
+  hsg:[
+    ["🧠 CHUYÊN ĐỀ HSG","Các chuyên đề bồi dưỡng học sinh giỏi."],
+    ["🏆 BÀI TẬP NÂNG CAO","Hệ thống bài tập tư duy và nâng cao."],
+    ["📝 PHIẾU HỌC TẬP HSG","Phiếu luyện tập dành cho học sinh giỏi."],
+    ["🎯 ÔN LUYỆN HSG","Tài liệu ôn luyện và tổng hợp."],
+    ["📄 PDF HSG","Các file PDF bồi dưỡng học sinh giỏi."]
+  ],
+
+  chua:[
+    ["📖 KIẾN THỨC CẦN NHỚ","Tóm tắt lại kiến thức nền tảng."],
+    ["✏️ BÀI TẬP CƠ BẢN","Bài tập giúp học sinh luyện lại kiến thức."],
+    ["📝 PHIẾU LUYỆN TẬP","Phiếu củng cố theo từng nội dung."],
+    ["🔄 ÔN TẬP","Tài liệu ôn lại kiến thức còn yếu."],
+    ["📄 PDF CHỮA HỔNG","Các file PDF củng cố nền tảng."]
+  ]
+
+};
+
+function openDocument(title,type){
+
+  document.getElementById("documentTitle").textContent =
+    "TÀI LIỆU - " + title;
+
+  if(type==="thcs"){
+    document.getElementById("documentCategory").textContent =
+      "TÀI LIỆU TOÁN THCS";
+  }
+
+  if(type==="hsg"){
+    document.getElementById("documentCategory").textContent =
+      "TÀI LIỆU BỒI DƯỠNG HỌC SINH GIỎI";
+  }
+
+  if(type==="chua"){
+    document.getElementById("documentCategory").textContent =
+      "TÀI LIỆU CHỮA HỔNG KIẾN THỨC";
+  }
+
+  const list = document.getElementById("folderList");
+  list.innerHTML = "";
+
+  documentFolders[type].forEach(function(item){
+
+    const box = document.createElement("div");
+    box.className = "folder";
+
+    box.innerHTML =
+      '<div class="folder-info">' +
+      '<strong>' + item[0] + '</strong>' +
+      '<span>' + item[1] + '</span>' +
+      '</div>' +
+      '<button onclick="showDocumentMessage()">MỞ</button>';
+
+    list.appendChild(box);
+
+  });
+
+  document.getElementById("documentMessage").style.display="none";
+  document.getElementById("documentModal").classList.add("show");
+}
+
+function closeDocument(){
+  document.getElementById("documentModal").classList.remove("show");
+}
+
+function showDocumentMessage(){
+  document.getElementById("documentMessage").style.display="block";
+}
+
+document.getElementById("documentModal").addEventListener("click",function(e){
+  if(e.target===this){
+    closeDocument();
+  }
+});
+
+</script>
+
+</body>
+</html>
