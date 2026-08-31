@@ -1,1 +1,935 @@
-<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lớp Toán cô Hạnh Dung</title><style>*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f9fc;color:#172554}header{background:linear-gradient(135deg,#102a66,#2457a7);color:#fff;text-align:center;padding:48px 20px}header h1{margin:0 0 10px;font-size:38px}.container{max-width:1120px;margin:35px auto;padding:0 20px}.intro,.section-title{text-align:center}.section-title{margin:35px 0 20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}.card{background:#fff;border-radius:16px;padding:24px 20px;box-shadow:0 5px 18px rgba(0,0,0,.08);text-align:center}.card p{color:#53627a;line-height:1.5;min-height:48px}.btn{display:inline-block;margin-top:8px;padding:10px 18px;background:#173b78;color:#fff;text-decoration:none;border-radius:8px;font-weight:700}.back{display:inline-block;margin-bottom:25px;text-decoration:none;color:#173b78;font-weight:700}.hsg{background:#fff8e8;border-radius:18px;padding:28px 22px;margin-top:36px}.hsg-card{border-top:4px solid #c78a19}footer{margin-top:50px;background:#eef2f7;text-align:center;padding:25px 15px;color:#334155;line-height:1.6}@media(max-width:600px){header h1{font-size:30px}}</style></head><body><header><h1>LỚP TOÁN CÔ HẠNH DUNG</h1><p>Tư duy sáng tạo – giải hay – học là thích</p></header><main class="container"><section class="intro"><h2>HỌC TOÁN ĐỂ HIỂU – LUYỆN TẬP HIỆU QUẢ</h2><p>Bài học, phiếu luyện tập và quiz Toán dành cho học sinh THCS.</p></section><h2 class="section-title">CHƯƠNG TRÌNH TOÁN THCS</h2><section class="grid"><div class="card "><h3>TOÁN 6</h3><p>Bài học – Bài tập – Quiz</p><a class="btn" href="toan6.html">Khám phá</a></div><div class="card "><h3>TOÁN 7</h3><p>Bài học – Bài tập – Quiz</p><a class="btn" href="toan7.html">Khám phá</a></div><div class="card "><h3>TOÁN 8</h3><p>Bài học – Bài tập – Quiz</p><a class="btn" href="toan8.html">Khám phá</a></div><div class="card "><h3>TOÁN 9</h3><p>Bài học – Bài tập – Quiz</p><a class="btn" href="toan9.html">Khám phá</a></div></section><section class="hsg"><h2 class="section-title">BỒI DƯỠNG HỌC SINH GIỎI</h2><section class="grid"><div class="card hsg-card"><h3>HỌC SINH GIỎI LỚP 6</h3><p>Chuyên đề nâng cao – Bài tập – Quiz</p><a class="btn" href="hsg6.html">Khám phá</a></div><div class="card hsg-card"><h3>HỌC SINH GIỎI LỚP 7</h3><p>Chuyên đề nâng cao – Bài tập – Quiz</p><a class="btn" href="hsg7.html">Khám phá</a></div><div class="card hsg-card"><h3>HỌC SINH GIỎI LỚP 8</h3><p>Chuyên đề nâng cao – Bài tập – Quiz</p><a class="btn" href="hsg8.html">Khám phá</a></div><div class="card hsg-card"><h3>HỌC SINH GIỎI LỚP 9</h3><p>Chuyên đề nâng cao – Bài tập – Quiz</p><a class="btn" href="hsg9.html">Khám phá</a></div></section></section></main><footer><strong>LỚP TOÁN CÔ HẠNH DUNG</strong><br>© 2026 – Bản quyền thuộc về Lớp Toán cô Hạnh Dung</footer></body></html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lớp Toán Cô Hạnh Dung</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fffafd;
+    color:#29244f;
+    line-height:1.6;
+}
+
+/* =========================
+   THANH TRÊN
+========================= */
+
+.topbar{
+    background:linear-gradient(90deg,#27155f,#5930a9);
+    color:white;
+    padding:9px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    font-size:14px;
+}
+
+/* =========================
+   MENU
+========================= */
+
+nav{
+    background:white;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 18px rgba(50,30,100,.08);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    color:#5938c4;
+    line-height:1.1;
+}
+
+.logo span{
+    display:block;
+    color:#ec4a8c;
+}
+
+.menu{
+    display:flex;
+    gap:22px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#33305c;
+    font-weight:bold;
+}
+
+.menu a:hover{
+    color:#e9458b;
+}
+
+/* =========================
+   BÌA TRANG CHỦ
+========================= */
+
+.hero{
+    min-height:540px;
+    padding:55px 6%;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:35px;
+
+    background:
+    radial-gradient(circle at 12% 15%,white,transparent 24%),
+    radial-gradient(circle at 80% 20%,#ffddec,transparent 28%),
+    linear-gradient(125deg,#fff9fc,#f2eaff,#ffedf5);
+}
+
+.welcome{
+    display:inline-block;
+    background:white;
+    padding:7px 15px;
+    border-radius:30px;
+    color:#5938c4;
+    font-weight:bold;
+    margin-bottom:15px;
+    box-shadow:0 6px 20px rgba(80,50,130,.08);
+}
+
+.hero h1{
+    font-size:57px;
+    line-height:1.03;
+    color:#332270;
+}
+
+.hero h1 span{
+    display:block;
+    color:#e83e84;
+    margin-top:8px;
+}
+
+.slogan{
+    display:inline-block;
+    margin:18px 0;
+    padding:10px 18px;
+    border-radius:10px;
+
+    background:
+    linear-gradient(90deg,#5938c4,#a44ed8,#e94b91);
+
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.hero-text{
+    font-size:18px;
+    color:#54536b;
+    max-width:650px;
+}
+
+.hero-text strong{
+    color:#e83e84;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:25px;
+}
+
+.hero-button{
+    text-decoration:none;
+    color:white;
+    padding:12px 22px;
+    border-radius:25px;
+    font-weight:bold;
+
+    background:
+    linear-gradient(90deg,#5835c6,#7c59df);
+
+    box-shadow:
+    0 8px 20px rgba(91,63,211,.20);
+}
+
+.hero-button.pink{
+    background:
+    linear-gradient(90deg,#e83f84,#ff69a4);
+}
+
+/* =========================
+   ẢNH CÔ HẠNH DUNG
+========================= */
+
+.teacher-area{
+    position:relative;
+    min-height:430px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.teacher-photo{
+    width:100%;
+    max-width:620px;
+    min-height:430px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(145deg,#ffe2ee,#e9ddff);
+
+    box-shadow:
+    0 15px 40px rgba(70,40,120,.16);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:#69449c;
+    font-size:22px;
+    font-weight:bold;
+
+    overflow:hidden;
+}
+
+.teacher-photo img{
+    width:100%;
+    height:100%;
+    max-height:500px;
+    object-fit:cover;
+    display:block;
+}
+
+.float-box{
+    position:absolute;
+    background:white;
+    padding:11px 15px;
+    border-radius:15px;
+    font-weight:bold;
+
+    box-shadow:
+    0 10px 25px rgba(50,30,100,.14);
+}
+
+.float-one{
+    left:-5px;
+    bottom:35px;
+}
+
+.float-two{
+    right:-5px;
+    top:35px;
+}
+
+/* =========================
+   4 ĐIỂM NỔI BẬT
+========================= */
+
+.features{
+    width:min(1180px,92%);
+    margin:-25px auto 50px;
+
+    position:relative;
+    z-index:5;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.feature{
+    background:white;
+    padding:22px 16px;
+    border-radius:20px;
+    text-align:center;
+
+    box-shadow:
+    0 10px 28px rgba(60,40,110,.10);
+}
+
+.feature-icon{
+    font-size:31px;
+}
+
+.feature h3{
+    margin-top:7px;
+    color:#5d3ac4;
+    font-size:17px;
+}
+
+.feature p{
+    color:#737188;
+    font-size:14px;
+}
+
+/* =========================
+   KHUNG CHUNG
+========================= */
+
+.container{
+    max-width:1180px;
+    margin:auto;
+    padding:0 20px 60px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:28px;
+}
+
+.title h2{
+    font-size:31px;
+    color:#30226d;
+}
+
+.title p{
+    color:#747287;
+}
+
+/* =========================
+   CÁC LỚP TOÁN
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:28px 18px;
+    border-radius:23px;
+    text-align:center;
+
+    border:1px solid #f0e9f9;
+
+    box-shadow:
+    0 10px 28px rgba(55,35,100,.09);
+
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 16px 35px rgba(55,35,100,.15);
+}
+
+.icon{
+    font-size:43px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    font-size:23px;
+    margin-bottom:7px;
+}
+
+.card p{
+    color:#737187;
+    min-height:48px;
+}
+
+.toan6 h3{
+    color:#6040c9;
+}
+
+.toan7 h3{
+    color:#df4384;
+}
+
+.toan8 h3{
+    color:#278fcf;
+}
+
+.toan9 h3{
+    color:#4a9e49;
+}
+
+.button{
+    display:inline-block;
+    margin-top:15px;
+
+    padding:10px 20px;
+
+    border-radius:12px;
+
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+
+    background:
+    linear-gradient(90deg,#5030b5,#7653da);
+}
+
+/* =========================
+   HỌC SINH GIỎI
+========================= */
+
+.hsg{
+    margin-top:50px;
+    padding:38px 27px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(120deg,#fff8e7,#fffdf7,#f5ebff);
+
+    border:1px solid #f0deb7;
+}
+
+.hsg .card{
+    border-top:5px solid #e5ad3e;
+}
+
+.hsg .card h3{
+    color:#633ba4;
+}
+
+.hsg .button{
+    background:
+    linear-gradient(90deg,#8a51c5,#d765ad);
+}
+
+/* =========================
+   BÀI GIẢNG - BÀI TẬP...
+========================= */
+
+.study-title{
+    margin-top:52px;
+}
+
+.resources{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.resource{
+    background:
+    linear-gradient(145deg,#ffffff,#faf5ff);
+
+    padding:22px;
+    border-radius:20px;
+
+    text-align:center;
+
+    border:1px solid #eee6fa;
+
+    box-shadow:
+    0 8px 24px rgba(50,35,90,.08);
+}
+
+.resource span{
+    display:block;
+    font-size:34px;
+}
+
+.resource h3{
+    margin-top:7px;
+    color:#37266f;
+}
+
+.resource p{
+    font-size:14px;
+    color:#747287;
+}
+
+/* =========================
+   THỐNG KÊ
+========================= */
+
+.stats{
+    margin-top:50px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    padding:30px 20px;
+
+    border-radius:27px;
+
+    color:white;
+
+    background:
+    linear-gradient(115deg,#25145f,#5e29a3,#8a3ab8);
+}
+
+.stat{
+    text-align:center;
+}
+
+.stat strong{
+    display:block;
+    font-size:32px;
+    color:#ffd76a;
+}
+
+/* =========================
+   CHÂN TRANG
+========================= */
+
+footer{
+    background:#1d1348;
+    color:white;
+
+    text-align:center;
+
+    padding:32px 15px;
+}
+
+footer strong{
+    color:#ffd66a;
+}
+
+/* =========================
+   ĐIỆN THOẠI
+========================= */
+
+@media(max-width:950px){
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .grid,
+    .features,
+    .resources,
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .menu{
+        display:none;
+    }
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        flex-direction:column;
+        text-align:center;
+        gap:3px;
+    }
+
+    .hero{
+        padding-top:35px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .slogan{
+        font-size:16px;
+    }
+
+    .grid,
+    .features,
+    .resources,
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .float-box{
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- THANH TRÊN -->
+
+<div class="topbar">
+
+    <span>
+        ⭐ Tư duy sáng tạo – Giải hay – Học là thích
+    </span>
+
+    <span>
+        LỚP TOÁN CÔ HẠNH DUNG
+    </span>
+
+</div>
+
+
+<!-- MENU -->
+
+<nav>
+
+    <div class="logo">
+
+        LỚP TOÁN
+
+        <span>
+            CÔ HẠNH DUNG
+        </span>
+
+    </div>
+
+    <div class="menu">
+
+        <a href="#trangchu">
+            TRANG CHỦ
+        </a>
+
+        <a href="#toanthcs">
+            TOÁN 6–9
+        </a>
+
+        <a href="#hsg">
+            HỌC SINH GIỎI
+        </a>
+
+        <a href="#tailieu">
+            TÀI LIỆU
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- BÌA -->
+
+<section class="hero" id="trangchu">
+
+<div>
+
+    <div class="welcome">
+        ✨ Chào mừng bạn đến với lớp học của cô Hạnh Dung
+    </div>
+
+    <h1>
+
+        LỚP TOÁN
+
+        <span>
+            CÔ HẠNH DUNG
+        </span>
+
+    </h1>
+
+    <div class="slogan">
+
+        Tư duy sáng tạo – Giải hay – Học là thích
+
+    </div>
+
+    <p class="hero-text">
+
+        <strong>
+            HỌC TOÁN DỄ HIỂU – LUYỆN TẬP HIỆU QUẢ
+        </strong>
+
+        <br>
+
+        Hệ thống bài học, bài tập, quiz và chuyên đề
+        bồi dưỡng dành cho học sinh THCS.
+
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#toanthcs"
+           class="hero-button">
+
+            XEM CÁC KHỐI LỚP
+
+        </a>
+
+        <a href="#hsg"
+           class="hero-button pink">
+
+            BỒI DƯỠNG HỌC SINH GIỎI
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ẢNH CÔ -->
+
+<div class="teacher-area">
+
+    <div class="float-box float-one">
+        📚 Toán 6 – 7 – 8 – 9
+    </div>
+
+    <div class="float-box float-two">
+        🏆 HSG 6 – 7 – 8 – 9
+    </div>
+
+    <div class="teacher-photo">
+
+        <!--
+        SAU NÀY KHI ĐƯA ẢNH CÔ LÊN GITHUB,
+        MÌNH SẼ THAY PHẦN NÀY BẰNG ẢNH THẬT.
+        -->
+
+        ẢNH BÌA
+        <br>
+        CÔ HẠNH DUNG
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- 4 ĐIỂM NỔI BẬT -->
+
+<section class="features">
+
+<div class="feature">
+
+    <div class="feature-icon">💡</div>
+
+    <h3>
+        TƯ DUY SÁNG TẠO
+    </h3>
+
+    <p>
+        Hiểu bản chất – không học vẹt
+    </p>
+
+</div>
+
+
+<div class="feature">
+
+    <div class="feature-icon">🎯</div>
+
+    <h3>
+        GIẢI HAY
+    </h3>
+
+    <p>
+        Phương pháp rõ ràng – dễ nhớ
+    </p>
+
+</div>
+
+
+<div class="feature">
+
+    <div class="feature-icon">📈</div>
+
+    <h3>
+        TIẾN BỘ MỖI NGÀY
+    </h3>
+
+    <p>
+        Luyện tập đều – phát triển tư duy
+    </p>
+
+</div>
+
+
+<div class="feature">
+
+    <div class="feature-icon">❤️</div>
+
+    <h3>
+        ĐỒNG HÀNH
+    </h3>
+
+    <p>
+        Theo sát quá trình học tập
+    </p>
+
+</div>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- =========================
+     TOÁN 6 - 7 - 8 - 9
+========================= -->
+
+<section id="toanthcs">
+
+<div class="title">
+
+    <h2>
+        CHƯƠNG TRÌNH TOÁN THCS
+    </h2>
+
+    <p>
+        Chọn khối lớp để bắt đầu học
+    </p>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- TOÁN 6 -->
+
+<div class="card toan6">
+
+    <div class="icon">
+        🔢
+    </div>
+
+    <h3>
+        TOÁN 6
+    </h3>
+
+    <p>
+        Bài học – Bài tập – Quiz
+    </p>
+
+    <a class="button"
+       href="toan6.html">
+
+        Khám phá
+
+    </a>
+
+</div>
+
+
+<!-- TOÁN 7 -->
+
+<div class="card toan7">
+
+    <div class="icon">
+        📐
+    </div>
+
+    <h3>
+        TOÁN 7
+    </h3>
+
+    <p>
+        Đại số – Hình học – Luyện tập
+    </p>
+
+    <a class="button"
+       href="toan7.html">
+
+        Khám phá
+
+    </a>
+
+</div>
+
+
+<!-- TOÁN 8 -->
+
+<div class="card toan8">
+
+    <div class="icon">
+        📊
+    </div>
+
+    <h3>
+        TOÁN 8
+    </h3>
+
+    <p>
+        Kiến thức trọng tâm – Bài nâng cao
+    </p>
+
+    <a class="button"
+       href="toan8.html">
+
+        Khám phá
+
+    </a>
+
+</div>
+
+
+<!-- TOÁN 9 -->
+
+<div class="card toan9">
+
+    <div class="icon">
+        🧠
+    </div>
+
+    <h3>
+        TOÁN 9
+    </h3>
+
+    <p>
+        Ôn luyện – Chuyên đề – Vào 10
+    </p>
+
+    <a class="button"
+       href="toan9.html">
+
+        Khám phá
+
+    </a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HỌC SINH GIỎI
+========================= -->
+
+<section class="hsg" id="hsg">
+
+<div class="title">
+
+    <h2>
+        🏆 BỒI DƯỠNG HỌC SINH GIỎI
+    </h2>
+
+    <p>
+        Chuyên đề tư duy và bài tập nâng cao theo từng khối
+    </p>
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- HSG 6 -->
+
+<div class="card">
+
+    <div class="icon">
+        🥇
