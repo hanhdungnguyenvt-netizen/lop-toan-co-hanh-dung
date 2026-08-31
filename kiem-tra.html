@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kiểm tra - Lớp Toán cô Hạnh Dung</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#29244f;
+  background:#fffafd;
+  line-height:1.6;
+}
+
+/* THANH TRÊN */
+.topbar{
+  background:linear-gradient(90deg,#27155f,#5930a9);
+  color:white;
+  padding:9px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  font-size:13px;
+}
+
+/* MENU */
+nav{
+  background:white;
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);
+}
+
+.logo{
+  font-weight:800;
+  color:#45268f;
+  line-height:1.15;
+  white-space:nowrap;
+}
+
+.logo span{
+  display:block;
+  color:#e3458b;
+}
+
+.menu{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#29244f;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.menu a:hover,
+.menu .active{
+  color:#e3458b;
+}
+
+/* ĐẦU TRANG */
+.hero{
+  padding:48px 7%;
+  text-align:center;
+  background:
+    radial-gradient(circle at 15% 20%,#ffffff,transparent 25%),
+    radial-gradient(circle at 82% 20%,#ffddec,transparent 28%),
+    linear-gradient(125deg,#fff9fc,#f2eaff,#ffedf5);
+}
+
+.hero h1{
+  margin:0 0 10px;
+  color:#45268f;
+  font-size:40px;
+}
+
+.hero p{
+  max-width:800px;
+  margin:auto;
+  color:#70637d;
+  font-size:16px;
+}
+
+/* CÁC NHÓM */
+.tests{
+  max-width:1180px;
+  margin:45px auto;
+  padding:0 25px;
+}
+
+.test-group{
+  background:white;
+  border-radius:24px;
+  padding:28px;
+  margin-bottom:28px;
+  box-shadow:0 8px 26px rgba(72,42,120,.08);
+  border:1px solid #f3e9f1;
+}
+
+.test-group h2{
+  margin:0 0 7px;
+  color:#5630a4;
+  font-size:25px;
+}
+
+.test-group > p{
+  margin:0 0 22px;
+  color:#70637d;
+}
+
+.test-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.test-card{
+  background:linear-gradient(145deg,#fffafd,#f7f0ff);
+  border:1px solid #eee2f4;
+  border-radius:18px;
+  padding:23px 15px;
+  text-align:center;
+  transition:.2s;
+}
+
+.test-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(70,45,120,.10);
+}
+
+.test-card h3{
+  margin:0 0 9px;
+  color:#e3458b;
+  font-size:20px;
+}
+
+.test-card p{
+  min-height:42px;
+  margin:0 0 14px;
+  color:#71677b;
+  font-size:14px;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-weight:700;
+  font-size:13px;
+  padding:10px 18px;
+  border-radius:22px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* POPUP */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(35,24,65,.40);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(760px,95vw);
+  max-height:90vh;
+  overflow:auto;
+  background:white;
+  border-radius:25px;
+  padding:30px;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.20);
+}
+
+.close{
+  position:absolute;
+  top:13px;
+  right:15px;
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:#f3eafa;
+  color:#5630a4;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.modal-box h2{
+  margin:0 45px 5px 0;
+  color:#5630a4;
+}
+
+.category{
+  color:#e3458b;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+/* CÁC THƯ MỤC KIỂM TRA */
+.folder-list{
+  display:grid;
+  gap:12px;
+}
+
+.folder{
+  background:#fff8fc;
+  border:1px solid #f2e5ef;
+  border-radius:16px;
+  padding:16px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.folder-info strong{
+  display:block;
+  color:#45268f;
+  margin-bottom:3px;
+}
+
+.folder-info span{
+  font-size:13px;
+  color:#817488;
+}
+
+.folder button{
+  flex-shrink:0;
+  border:0;
+  cursor:pointer;
+  background:#f1e8fa;
+  color:#5630a4;
+  font-weight:700;
+  padding:9px 14px;
+  border-radius:18px;
+}
+
+.message{
+  display:none;
+  margin-top:18px;
+  padding:15px;
+  text-align:center;
+  border-radius:15px;
+  background:#fff0f7;
+  color:#b33d75;
+  font-weight:700;
+}
+
+/* QUAY VỀ */
+.back{
+  text-align:center;
+  margin:10px 0 50px;
+}
+
+.back a{
+  display:inline-block;
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+  padding:11px 25px;
+  border-radius:24px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  nav{
+    display:block;
+  }
+
+  .logo{
+    margin-bottom:13px;
+  }
+
+  .menu{
+    overflow-x:auto;
+    gap:20px;
+  }
+
+  .test-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:31px;
+  }
+}
+
+@media(max-width:600px){
+
+  .test-grid{
+    grid-template-columns:1fr;
+  }
+
+  .folder{
+    display:block;
+  }
+
+  .folder button{
+    margin-top:10px;
+  }
+
+  .topbar{
+    font-size:11px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <span>⭐ Tư duy sáng tạo – Giải hay – Học là thích</span>
+  <span>LỚP TOÁN CÔ HẠNH DUNG</span>
+</div>
+
+<nav>
+
+  <div class="logo">
+    LỚP TOÁN
+    <span>CÔ HẠNH DUNG</span>
+  </div>
+
+  <div class="menu">
+    <a href="index.html">TRANG CHỦ</a>
+    <a href="gioi-thieu.html">GIỚI THIỆU</a>
+    <a href="khoa-hoc.html">KHÓA HỌC</a>
+    <a href="tai-lieu.html">TÀI LIỆU</a>
+    <a href="bai-tap.html">BÀI TẬP</a>
+    <a href="kiem-tra.html" class="active">KIỂM TRA</a>
+    <a href="thong-bao.html">THÔNG BÁO</a>
+    <a href="lien-he.html">LIÊN HỆ</a>
+  </div>
+
+</nav>
+
+<section class="hero">
+
+  <h1>✅ KIỂM TRA & ĐÁNH GIÁ</h1>
+
+  <p>
+    Hệ thống đề kiểm tra được sắp xếp theo từng khối lớp,
+    từng nhóm học sinh và từng dạng kiểm tra.
+  </p>
+
+</section>
+
+<section class="tests">
+
+<!-- 1. TOÁN THCS -->
+
+<div class="test-group">
+
+  <h2>📘 KIỂM TRA TOÁN THCS</h2>
+
+  <p>
+    Kiểm tra kiến thức theo chương trình Toán lớp 6 đến lớp 9.
+  </p>
+
+  <div class="test-grid">
+
+    <div class="test-card">
+      <h3>TOÁN 6</h3>
+      <p>Đề kiểm tra Toán 6.</p>
+      <button class="btn"
+        onclick="openTest('TOÁN 6','thcs')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>TOÁN 7</h3>
+      <p>Đề kiểm tra Toán 7.</p>
+      <button class="btn"
+        onclick="openTest('TOÁN 7','thcs')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>TOÁN 8</h3>
+      <p>Đề kiểm tra Toán 8.</p>
+      <button class="btn"
+        onclick="openTest('TOÁN 8','thcs')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>TOÁN 9</h3>
+      <p>Đề kiểm tra Toán 9.</p>
+      <button class="btn"
+        onclick="openTest('TOÁN 9','thcs')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 2. HSG -->
+
+<div class="test-group">
+
+  <h2>🏆 KIỂM TRA BỒI DƯỠNG HỌC SINH GIỎI</h2>
+
+  <p>
+    Đề luyện và đánh giá dành cho học sinh khá giỏi.
+  </p>
+
+  <div class="test-grid">
+
+    <div class="test-card">
+      <h3>HSG TOÁN 6</h3>
+      <p>Đề kiểm tra HSG Toán 6.</p>
+      <button class="btn"
+        onclick="openTest('HSG TOÁN 6','hsg')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>HSG TOÁN 7</h3>
+      <p>Đề kiểm tra HSG Toán 7.</p>
+      <button class="btn"
+        onclick="openTest('HSG TOÁN 7','hsg')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>HSG TOÁN 8</h3>
+      <p>Đề kiểm tra HSG Toán 8.</p>
+      <button class="btn"
+        onclick="openTest('HSG TOÁN 8','hsg')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>HSG TOÁN 9</h3>
+      <p>Đề kiểm tra HSG Toán 9.</p>
+      <button class="btn"
+        onclick="openTest('HSG TOÁN 9','hsg')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 3. CHỮA HỔNG -->
+
+<div class="test-group">
+
+  <h2>🌱 KIỂM TRA CHỮA HỔNG KIẾN THỨC</h2>
+
+  <p>
+    Đánh giá kiến thức nền và mức độ tiến bộ sau quá trình củng cố.
+  </p>
+
+  <div class="test-grid">
+
+    <div class="test-card">
+      <h3>CHỮA HỔNG 6</h3>
+      <p>Kiểm tra củng cố Toán 6.</p>
+      <button class="btn"
+        onclick="openTest('CHỮA HỔNG TOÁN 6','chua')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>CHỮA HỔNG 7</h3>
+      <p>Kiểm tra củng cố Toán 7.</p>
+      <button class="btn"
+        onclick="openTest('CHỮA HỔNG TOÁN 7','chua')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>CHỮA HỔNG 8</h3>
+      <p>Kiểm tra củng cố Toán 8.</p>
+      <button class="btn"
+        onclick="openTest('CHỮA HỔNG TOÁN 8','chua')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+    <div class="test-card">
+      <h3>CHỮA HỔNG 9</h3>
+      <p>Kiểm tra củng cố Toán 9.</p>
+      <button class="btn"
+        onclick="openTest('CHỮA HỔNG TOÁN 9','chua')">
+        MỞ KIỂM TRA
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+<!-- POPUP -->
+
+<div class="modal" id="testModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeTest()">×</button>
+
+    <h2 id="testTitle">KIỂM TRA</h2>
+
+    <div class="category" id="testCategory"></div>
+
+    <div class="folder-list" id="folderList"></div>
+
+    <div class="message" id="testMessage">
+      Đề kiểm tra đang được cô cập nhật.
+    </div>
+
+  </div>
+
+</div>
+
+<div class="back">
+  <a href="index.html">
+    ← QUAY VỀ TRANG CHỦ
+  </a>
+</div>
+
+<script>
+
+const folders = {
+
+  thcs:[
+    ["⏱️ KIỂM TRA 15 PHÚT","Các bài kiểm tra ngắn theo bài hoặc chuyên đề."],
+    ["📝 KIỂM TRA 45 PHÚT","Đề kiểm tra theo mạch kiến thức hoặc chương."],
+    ["📚 KIỂM TRA GIỮA KỲ","Đề giữa học kỳ."],
+    ["📖 KIỂM TRA CUỐI KỲ","Đề cuối học kỳ."],
+    ["✏️ ĐỀ LUYỆN TẬP","Đề luyện tập củng cố kiến thức."],
+    ["📑 ĐỀ TỔNG HỢP","Đề tổng hợp nhiều chuyên đề."]
+  ],
+
+  hsg:[
+    ["🧠 KIỂM TRA CHUYÊN ĐỀ","Đề kiểm tra theo từng chuyên đề HSG."],
+    ["🏆 ĐỀ LUYỆN HSG","Bộ đề luyện dành cho học sinh giỏi."],
+    ["📑 ĐỀ TỔNG HỢP","Đề tổng hợp các dạng toán nâng cao."],
+    ["🎯 ĐỀ THI THỬ","Đề thi thử theo cấu trúc HSG."],
+    ["✅ ĐÁP ÁN / HƯỚNG DẪN","Đáp án và hướng dẫn giải."]
+  ],
+
+  chua:[
+    ["🔎 KIỂM TRA KIẾN THỨC NỀN","Đánh giá phần kiến thức học sinh đang hổng."],
+    ["📘 KIỂM TRA THEO CHUYÊN ĐỀ","Kiểm tra sau từng nội dung được củng cố."],
+    ["🔄 KIỂM TRA SAU ÔN TẬP","Đánh giá mức độ tiến bộ sau ôn tập."],
+    ["🌱 ĐỀ CỦNG CỐ","Đề cơ bản giúp học sinh luyện lại kiến thức."]
+  ]
+
+};
+
+function openTest(title,type){
+
+  document.getElementById("testTitle").textContent =
+    "KIỂM TRA - " + title;
+
+  if(type==="thcs"){
+    document.getElementById("testCategory").textContent =
+      "KIỂM TRA TOÁN THCS";
+  }
+
+  if(type==="hsg"){
+    document.getElementById("testCategory").textContent =
+      "BỒI DƯỠNG HỌC SINH GIỎI";
+  }
+
+  if(type==="chua"){
+    document.getElementById("testCategory").textContent =
+      "CHỮA HỔNG KIẾN THỨC";
+  }
+
+  const list = document.getElementById("folderList");
+  list.innerHTML = "";
+
+  folders[type].forEach(function(item){
+
+    const box = document.createElement("div");
+    box.className = "folder";
+
+    box.innerHTML =
+      '<div class="folder-info">' +
+      '<strong>' + item[0] + '</strong>' +
+      '<span>' + item[1] + '</span>' +
+      '</div>' +
+      '<button onclick="showMessage()">MỞ</button>';
+
+    list.appendChild(box);
+
+  });
+
+  document.getElementById("testMessage").style.display="none";
+  document.getElementById("testModal").classList.add("show");
+}
+
+function closeTest(){
+  document.getElementById("testModal").classList.remove("show");
+}
+
+function showMessage(){
+  document.getElementById("testMessage").style.display="block";
+}
+
+document.getElementById("testModal").addEventListener("click",function(e){
+  if(e.target===this){
+    closeTest();
+  }
+});
+
+</script>
+
+</body>
+</html>
