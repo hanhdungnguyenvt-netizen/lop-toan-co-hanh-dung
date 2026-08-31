@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bài tập về nhà - Lớp Toán cô Hạnh Dung</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#29244f;
+  background:#fffafd;
+  line-height:1.6;
+}
+
+/* THANH TRÊN */
+
+.topbar{
+  background:linear-gradient(90deg,#27155f,#5930a9);
+  color:white;
+  padding:9px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  font-size:13px;
+}
+
+/* MENU */
+
+nav{
+  background:white;
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);
+}
+
+.logo{
+  font-weight:800;
+  color:#45268f;
+  line-height:1.15;
+  white-space:nowrap;
+}
+
+.logo span{
+  display:block;
+  color:#e3458b;
+}
+
+.menu{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#29244f;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.menu a:hover,
+.menu .active{
+  color:#e3458b;
+}
+
+/* ĐẦU TRANG */
+
+.hero{
+  padding:48px 7%;
+  text-align:center;
+  background:
+    radial-gradient(circle at 15% 20%,#ffffff,transparent 25%),
+    radial-gradient(circle at 82% 20%,#ffddec,transparent 28%),
+    linear-gradient(125deg,#fff9fc,#f2eaff,#ffedf5);
+}
+
+.hero h1{
+  margin:0 0 10px;
+  color:#45268f;
+  font-size:40px;
+}
+
+.hero p{
+  max-width:800px;
+  margin:auto;
+  color:#70637d;
+  font-size:16px;
+}
+
+/* KHU BÀI TẬP */
+
+.homework{
+  max-width:1180px;
+  margin:45px auto;
+  padding:0 25px;
+}
+
+.homework-group{
+  background:white;
+  border-radius:24px;
+  padding:28px;
+  margin-bottom:28px;
+  box-shadow:0 8px 26px rgba(72,42,120,.08);
+  border:1px solid #f3e9f1;
+}
+
+.homework-group h2{
+  margin:0 0 7px;
+  color:#5630a4;
+  font-size:25px;
+}
+
+.homework-group > p{
+  margin:0 0 22px;
+  color:#70637d;
+}
+
+/* 4 LỚP */
+
+.homework-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.homework-card{
+  background:linear-gradient(145deg,#fffafd,#f7f0ff);
+  border:1px solid #eee2f4;
+  border-radius:18px;
+  padding:23px 15px;
+  text-align:center;
+  transition:.2s;
+}
+
+.homework-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(70,45,120,.10);
+}
+
+.homework-card h3{
+  margin:0 0 9px;
+  color:#e3458b;
+  font-size:20px;
+}
+
+.homework-card p{
+  min-height:42px;
+  margin:0 0 14px;
+  color:#71677b;
+  font-size:14px;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-weight:700;
+  font-size:13px;
+  padding:10px 18px;
+  border-radius:22px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* POPUP BÀI TẬP */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(35,24,65,.40);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(720px,95vw);
+  max-height:90vh;
+  overflow:auto;
+  background:white;
+  border-radius:25px;
+  padding:30px;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.20);
+}
+
+.close{
+  position:absolute;
+  top:13px;
+  right:15px;
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:#f3eafa;
+  color:#5630a4;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.modal-box h2{
+  margin:0 45px 5px 0;
+  color:#5630a4;
+}
+
+.category{
+  color:#e3458b;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+/* BÀI TẬP MỚI NHẤT */
+
+.latest{
+  border-radius:18px;
+  padding:20px;
+  background:linear-gradient(135deg,#fff2f8,#f4efff);
+  border:1px solid #f1dfeb;
+}
+
+.new-badge{
+  display:inline-block;
+  background:#e3458b;
+  color:white;
+  padding:5px 11px;
+  border-radius:15px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+
+.latest h3{
+  margin:0 0 14px;
+  color:#45268f;
+}
+
+.detail{
+  background:white;
+  border-radius:13px;
+  padding:12px 14px;
+  margin-top:9px;
+}
+
+.detail strong{
+  color:#5630a4;
+}
+
+/* NÚT TRONG BÀI */
+
+.action-buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.action-buttons button{
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-weight:700;
+  padding:10px 17px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+.empty{
+  display:none;
+  margin-top:15px;
+  padding:13px;
+  text-align:center;
+  background:#fff;
+  border-radius:13px;
+  color:#b33d75;
+  font-weight:700;
+}
+
+/* QUAY VỀ */
+
+.back{
+  text-align:center;
+  margin:10px 0 50px;
+}
+
+.back a{
+  display:inline-block;
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+  padding:11px 25px;
+  border-radius:24px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  nav{
+    display:block;
+  }
+
+  .logo{
+    margin-bottom:13px;
+  }
+
+  .menu{
+    overflow-x:auto;
+    gap:20px;
+  }
+
+  .homework-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero h1{
+    font-size:31px;
+  }
+}
+
+@media(max-width:600px){
+
+  .homework-grid{
+    grid-template-columns:1fr;
+  }
+
+  .topbar{
+    font-size:11px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- THANH TRÊN -->
+
+<div class="topbar">
+  <span>⭐ Tư duy sáng tạo – Giải hay – Học là thích</span>
+  <span>LỚP TOÁN CÔ HẠNH DUNG</span>
+</div>
+
+
+<!-- MENU -->
+
+<nav>
+
+  <div class="logo">
+    LỚP TOÁN
+    <span>CÔ HẠNH DUNG</span>
+  </div>
+
+  <div class="menu">
+
+    <a href="index.html">TRANG CHỦ</a>
+    <a href="gioi-thieu.html">GIỚI THIỆU</a>
+    <a href="khoa-hoc.html">KHÓA HỌC</a>
+    <a href="tai-lieu.html">TÀI LIỆU</a>
+    <a href="bai-tap.html" class="active">BÀI TẬP</a>
+    <a href="kiem-tra.html">KIỂM TRA</a>
+    <a href="thong-bao.html">THÔNG BÁO</a>
+    <a href="lien-he.html">LIÊN HỆ</a>
+
+  </div>
+
+</nav>
+
+
+<!-- ĐẦU TRANG -->
+
+<section class="hero">
+
+  <h1>📝 BÀI TẬP VỀ NHÀ</h1>
+
+  <p>
+    Bài tập được sắp xếp theo từng khối lớp.
+    Học sinh có thể theo dõi bài mới, ngày giao,
+    hạn hoàn thành và tài liệu bài tập tại đây.
+  </p>
+
+</section>
+
+
+<section class="homework">
+
+
+<!-- PHẦN 1 -->
+
+<div class="homework-group">
+
+  <h2>📘 BÀI TẬP TOÁN THCS</h2>
+
+  <p>
+    Bài tập về nhà dành cho các lớp Toán 6, 7, 8 và 9.
+  </p>
+
+  <div class="homework-grid">
+
+    <div class="homework-card">
+      <h3>TOÁN 6</h3>
+      <p>Bài tập về nhà Toán 6.</p>
+      <button class="btn"
+        onclick="openHomework('TOÁN 6','BÀI TẬP TOÁN THCS')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>TOÁN 7</h3>
+      <p>Bài tập về nhà Toán 7.</p>
+      <button class="btn"
+        onclick="openHomework('TOÁN 7','BÀI TẬP TOÁN THCS')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>TOÁN 8</h3>
+      <p>Bài tập về nhà Toán 8.</p>
+      <button class="btn"
+        onclick="openHomework('TOÁN 8','BÀI TẬP TOÁN THCS')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>TOÁN 9</h3>
+      <p>Bài tập về nhà Toán 9.</p>
+      <button class="btn"
+        onclick="openHomework('TOÁN 9','BÀI TẬP TOÁN THCS')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- PHẦN 2 -->
+
+<div class="homework-group">
+
+  <h2>🏆 BÀI TẬP BỒI DƯỠNG HỌC SINH GIỎI</h2>
+
+  <p>
+    Bài tập nâng cao và bài luyện dành cho học sinh khá giỏi.
+  </p>
+
+  <div class="homework-grid">
+
+    <div class="homework-card">
+      <h3>HSG TOÁN 6</h3>
+      <p>Bài tập bồi dưỡng HSG 6.</p>
+      <button class="btn"
+        onclick="openHomework('HSG TOÁN 6','BỒI DƯỠNG HỌC SINH GIỎI')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>HSG TOÁN 7</h3>
+      <p>Bài tập bồi dưỡng HSG 7.</p>
+      <button class="btn"
+        onclick="openHomework('HSG TOÁN 7','BỒI DƯỠNG HỌC SINH GIỎI')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>HSG TOÁN 8</h3>
+      <p>Bài tập bồi dưỡng HSG 8.</p>
+      <button class="btn"
+        onclick="openHomework('HSG TOÁN 8','BỒI DƯỠNG HỌC SINH GIỎI')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>HSG TOÁN 9</h3>
+      <p>Bài tập bồi dưỡng HSG 9.</p>
+      <button class="btn"
+        onclick="openHomework('HSG TOÁN 9','BỒI DƯỠNG HỌC SINH GIỎI')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- PHẦN 3 -->
+
+<div class="homework-group">
+
+  <h2>🌱 BÀI TẬP CHỮA HỔNG KIẾN THỨC</h2>
+
+  <p>
+    Bài tập cơ bản giúp học sinh củng cố lại kiến thức còn yếu.
+  </p>
+
+  <div class="homework-grid">
+
+    <div class="homework-card">
+      <h3>CHỮA HỔNG 6</h3>
+      <p>Bài tập củng cố Toán 6.</p>
+      <button class="btn"
+        onclick="openHomework('CHỮA HỔNG TOÁN 6','CHỮA HỔNG KIẾN THỨC')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>CHỮA HỔNG 7</h3>
+      <p>Bài tập củng cố Toán 7.</p>
+      <button class="btn"
+        onclick="openHomework('CHỮA HỔNG TOÁN 7','CHỮA HỔNG KIẾN THỨC')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>CHỮA HỔNG 8</h3>
+      <p>Bài tập củng cố Toán 8.</p>
+      <button class="btn"
+        onclick="openHomework('CHỮA HỔNG TOÁN 8','CHỮA HỔNG KIẾN THỨC')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+    <div class="homework-card">
+      <h3>CHỮA HỔNG 9</h3>
+      <p>Bài tập củng cố Toán 9.</p>
+      <button class="btn"
+        onclick="openHomework('CHỮA HỔNG TOÁN 9','CHỮA HỔNG KIẾN THỨC')">
+        MỞ BÀI TẬP
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- POPUP -->
+
+<div class="modal" id="homeworkModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeHomework()">×</button>
+
+    <h2 id="homeworkTitle">BÀI TẬP</h2>
+
+    <div class="category" id="homeworkCategory"></div>
+
+
+    <div class="latest">
+
+      <span class="new-badge">
+        🆕 BÀI MỚI NHẤT
+      </span>
+
+      <h3 id="latestTitle">
+        Chưa có bài tập mới
+      </h3>
+
+      <div class="detail">
+        📅 <strong>Ngày giao:</strong>
+        <span>Đang cập nhật</span>
+      </div>
+
+      <div class="detail">
+        ⏰ <strong>Hạn hoàn thành:</strong>
+        <span>Đang cập nhật</span>
+      </div>
+
+      <div class="detail">
+        📖 <strong>Nội dung:</strong>
+        <span>Đang cập nhật</span>
+      </div>
+
+      <div class="action-buttons">
+
+        <button onclick="showEmpty()">
+          📄 XEM BÀI TẬP
+        </button>
+
+        <button onclick="showEmpty()">
+          ⬇ TẢI PDF
+        </button>
+
+      </div>
+
+      <div class="empty" id="emptyMessage">
+        Bài tập đang được cô cập nhật.
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="back">
+
+  <a href="index.html">
+    ← QUAY VỀ TRANG CHỦ
+  </a>
+
+</div>
+
+
+<script>
+
+function openHomework(title,category){
+
+  document.getElementById("homeworkTitle").textContent =
+    "BÀI TẬP VỀ
