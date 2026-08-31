@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Liên hệ - Lớp Toán cô Hạnh Dung</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#29244f;
+  background:#fffafd;
+}
+
+/* THANH TRÊN */
+.topbar{
+  background:linear-gradient(90deg,#27155f,#5930a9);
+  color:white;
+  padding:9px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+}
+
+/* MENU */
+nav{
+  background:white;
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);
+}
+
+.logo{
+  font-weight:800;
+  color:#45268f;
+  line-height:1.15;
+  white-space:nowrap;
+}
+
+.logo span{
+  display:block;
+  color:#e3458b;
+}
+
+.menu{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#29244f;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.menu a:hover,
+.menu .active{
+  color:#e3458b;
+}
+
+/* ĐẦU TRANG */
+.hero{
+  padding:50px 7%;
+  text-align:center;
+  background:
+    radial-gradient(circle at 15% 20%,#ffffff,transparent 25%),
+    radial-gradient(circle at 82% 20%,#ffddec,transparent 28%),
+    linear-gradient(125deg,#fff9fc,#f2eaff,#ffedf5);
+}
+
+.hero h1{
+  margin:0 0 10px;
+  color:#45268f;
+  font-size:40px;
+}
+
+.hero p{
+  margin:0;
+  color:#70637d;
+  font-size:17px;
+}
+
+/* LIÊN HỆ */
+.contact-wrap{
+  max-width:800px;
+  margin:45px auto;
+  padding:0 25px;
+}
+
+.contact-box{
+  background:white;
+  border-radius:24px;
+  padding:38px;
+  text-align:center;
+  box-shadow:0 8px 26px rgba(72,42,120,.09);
+  border:1px solid #f3e9f1;
+}
+
+.contact-box h2{
+  margin:0 0 10px;
+  color:#e3458b;
+  font-size:30px;
+}
+
+.contact-box .sub{
+  color:#6d6278;
+  margin-bottom:28px;
+}
+
+.contact-item{
+  background:#fff8fc;
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:16px;
+  font-size:20px;
+}
+
+.contact-item strong{
+  color:#5630a4;
+}
+
+.contact-actions{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.contact-actions a{
+  display:inline-block;
+  text-decoration:none;
+  color:white;
+  font-weight:700;
+  padding:12px 22px;
+  border-radius:24px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* NÚT QUAY VỀ */
+.back{
+  text-align:center;
+  margin:20px 0 50px;
+}
+
+.back a{
+  display:inline-block;
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  padding:11px 25px;
+  border-radius:24px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{
+    display:block;
+  }
+
+  .logo{
+    margin-bottom:13px;
+  }
+
+  .menu{
+    overflow-x:auto;
+    gap:20px;
+  }
+
+  .hero h1{
+    font-size:31px;
+  }
+
+  .contact-item{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <span>⭐ Tư duy sáng tạo – Giải hay – Học là thích</span>
+  <span>LỚP TOÁN CÔ HẠNH DUNG</span>
+</div>
+
+<nav>
+
+  <div class="logo">
+    LỚP TOÁN
+    <span>CÔ HẠNH DUNG</span>
+  </div>
+
+  <div class="menu">
+    <a href="index.html">TRANG CHỦ</a>
+    <a href="gioi-thieu.html">GIỚI THIỆU</a>
+    <a href="khoa-hoc.html">KHÓA HỌC</a>
+    <a href="tai-lieu.html">TÀI LIỆU</a>
+    <a href="bai-tap.html">BÀI TẬP</a>
+    <a href="kiem-tra.html">KIỂM TRA</a>
+    <a href="thong-bao.html">THÔNG BÁO</a>
+    <a href="lien-he.html" class="active">LIÊN HỆ</a>
+  </div>
+
+</nav>
+
+<section class="hero">
+
+  <h1>LIÊN HỆ</h1>
+
+  <p>
+    Kết nối với Lớp Toán cô Hạnh Dung
+  </p>
+
+</section>
+
+<section class="contact-wrap">
+
+  <div class="contact-box">
+
+    <h2>LỚP TOÁN CÔ HẠNH DUNG</h2>
+
+    <p class="sub">
+      Phụ huynh và học sinh có thể liên hệ trực tiếp qua điện thoại hoặc Zalo.
+    </p>
+
+    <div class="contact-item">
+      ☎ Điện thoại:
+      <strong>0903 093 244</strong>
+    </div>
+
+    <div class="contact-item">
+      💬 Zalo:
+      <strong>0903 369 1052</strong>
+    </div>
+
+    <div class="contact-actions">
+
+      <a href="tel:0903093244">
+        ☎ GỌI ĐIỆN
+      </a>
+
+      <a href="https://zalo.me/09033691052">
+        💬 LIÊN HỆ ZALO
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="back">
+  <a href="index.html">
+    ← QUAY VỀ TRANG CHỦ
+  </a>
+</div>
+
+</body>
+</html>
