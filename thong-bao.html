@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thông báo - Lớp Toán cô Hạnh Dung</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#29244f;
+  background:#fffafd;
+}
+
+/* THANH TRÊN */
+
+.topbar{
+  background:linear-gradient(90deg,#27155f,#5930a9);
+  color:white;
+  padding:9px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+}
+
+/* MENU */
+
+nav{
+  background:white;
+  padding:14px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  box-shadow:0 3px 14px rgba(0,0,0,.06);
+}
+
+.logo{
+  font-weight:800;
+  color:#45268f;
+  line-height:1.15;
+  white-space:nowrap;
+}
+
+.logo span{
+  display:block;
+  color:#e3458b;
+}
+
+.menu{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#29244f;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.menu a:hover,
+.menu .active{
+  color:#e3458b;
+}
+
+/* ĐẦU TRANG */
+
+.hero{
+  padding:50px 7%;
+  text-align:center;
+
+  background:
+    radial-gradient(circle at 15% 20%,#ffffff,transparent 25%),
+    radial-gradient(circle at 82% 20%,#ffddec,transparent 28%),
+    linear-gradient(125deg,#fff9fc,#f2eaff,#ffedf5);
+}
+
+.hero h1{
+  margin:0 0 10px;
+  color:#45268f;
+  font-size:40px;
+}
+
+.hero p{
+  margin:0;
+  color:#70637d;
+  font-size:17px;
+}
+
+/* BẢNG TIN */
+
+.news{
+  max-width:950px;
+  margin:45px auto;
+  padding:0 25px;
+}
+
+.notice{
+  background:white;
+  border-radius:24px;
+  padding:35px;
+  margin-bottom:25px;
+  box-shadow:0 8px 26px rgba(72,42,120,.09);
+  border-left:7px solid #e3458b;
+}
+
+.date{
+  display:inline-block;
+  background:#f4eaff;
+  color:#5630a4;
+  padding:6px 14px;
+  border-radius:18px;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.notice h2{
+  margin:0 0 18px;
+  color:#e3458b;
+  font-size:26px;
+}
+
+.notice p{
+  font-size:16px;
+  line-height:1.8;
+}
+
+.highlight{
+  margin-top:25px;
+  padding:20px;
+  text-align:center;
+  border-radius:18px;
+  background:linear-gradient(135deg,#fff1f7,#f3edff);
+  color:#5630a4;
+  font-weight:700;
+  font-size:18px;
+}
+
+/* NÚT QUAY LẠI */
+
+.back{
+  text-align:center;
+  margin:20px 0 50px;
+}
+
+.back a{
+  display:inline-block;
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  padding:11px 25px;
+  border-radius:24px;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* ĐIỆN THOẠI */
+
+@media(max-width:900px){
+
+  nav{
+    display:block;
+  }
+
+  .logo{
+    margin-bottom:13px;
+  }
+
+  .menu{
+    overflow-x:auto;
+    gap:20px;
+  }
+
+  .hero h1{
+    font-size:31px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="topbar">
+
+  <span>
+    ⭐ Tư duy sáng tạo – Giải hay – Học là thích
+  </span>
+
+  <span>
+    LỚP TOÁN CÔ HẠNH DUNG
+  </span>
+
+</div>
+
+
+<nav>
+
+  <div class="logo">
+    LỚP TOÁN
+    <span>CÔ HẠNH DUNG</span>
+  </div>
+
+
+  <div class="menu">
+
+    <a href="index.html">TRANG CHỦ</a>
+
+    <a href="gioi-thieu.html">
+      GIỚI THIỆU
+    </a>
+
+    <a href="khoa-hoc.html">
+      KHÓA HỌC
+    </a>
+
+    <a href="tai-lieu.html">
+      TÀI LIỆU
+    </a>
+
+    <a href="bai-tap.html">
+      BÀI TẬP
+    </a>
+
+    <a href="kiem-tra.html">
+      KIỂM TRA
+    </a>
+
+    <a href="thong-bao.html" class="active">
+      THÔNG BÁO
+    </a>
+
+    <a href="lien-he.html">
+      LIÊN HỆ
+    </a>
+
+  </div>
+
+</nav>
+
+
+<section class="hero">
+
+  <h1>📢 BẢNG TIN LỚP TOÁN CÔ DUNG</h1>
+
+  <p>
+    Nơi cập nhật những thông báo mới dành cho
+    học sinh và phụ huynh.
+  </p>
+
+</section>
+
+
+<section class="news">
+
+
+  <article class="notice">
+
+    <div class="date">
+      📅 THÁNG 9/2026
+    </div>
+
+    <h2>
+      🎉 CHÀO MỪNG NĂM HỌC MỚI 2026 – 2027
+    </h2>
+
+    <p>
+      Một năm học mới lại bắt đầu!
+    </p>
+
+    <p>
+      Cô Hạnh Dung thân chúc các em học sinh bước vào
+      năm học 2026 – 2027 với thật nhiều niềm vui,
+      sức khỏe, sự tự tin và quyết tâm.
+    </p>
+
+    <p>
+      Cô mong rằng trong năm học này, mỗi bạn sẽ
+      chăm chỉ hơn một chút, kiên trì hơn một chút
+      và không ngại thử sức với những bài toán khó.
+    </p>
+
+    <p>
+      Chúng ta sẽ cùng nhau xây dựng một hành trình
+      học tập nghiêm túc, tích cực và đầy hứng thú;
+      từng bước chinh phục những mục tiêu mới
+      và tạo nên những kết quả thật đáng tự hào.
+    </p>
+
+    <div class="highlight">
+      ✨ CHÚC CÁC EM MỘT NĂM HỌC 2026 – 2027
+      THẬT THÀNH CÔNG VÀ RỰC RỠ! ✨
+    </div>
+
+  </article>
+
+
+</section>
+
+
+<div class="back">
+
+  <a href="index.html">
+    ← QUAY VỀ TRANG CHỦ
+  </a>
+
+</div>
+
+
+</body>
+</html>
