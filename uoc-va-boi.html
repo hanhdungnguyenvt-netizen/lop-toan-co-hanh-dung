@@ -2,107 +2,248 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>TOÁN 6 | Lớp Toán cô Hạnh Dung</title>
+<title>Ước và bội – Toán 6 | Lớp Toán cô Hạnh Dung</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family:Arial, sans-serif;
   background:#f7f9fc;
   color:#172554;
 }
 
 header{
   background:linear-gradient(135deg,#102a66,#2457a7);
-  color:#fff;
+  color:white;
   text-align:center;
-  padding:48px 20px;
+  padding:45px 20px;
 }
 
 header h1{
   margin:0 0 10px;
-  font-size:38px;
+  font-size:40px;
+}
+
+header p{
+  margin:6px 0;
 }
 
 .container{
-  max-width:1120px;
-  margin:35px auto;
+  max-width:1180px;
+  margin:32px auto;
   padding:0 20px;
-}
-
-.intro,.section-title{
-  text-align:center;
-}
-
-.section-title{
-  margin:35px 0 20px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:#fff;
-  border-radius:16px;
-  padding:24px 20px;
-  box-shadow:0 5px 18px rgba(0,0,0,.08);
-  text-align:center;
-}
-
-.card p{
-  color:#53627a;
-  line-height:1.5;
-  min-height:48px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:8px;
-  padding:10px 18px;
-  background:#173b78;
-  color:#fff;
-  text-decoration:none;
-  border-radius:8px;
-  font-weight:700;
 }
 
 .back{
   display:inline-block;
   margin-bottom:25px;
-  text-decoration:none;
   color:#173b78;
-  font-weight:700;
+  font-weight:bold;
+  text-decoration:none;
 }
 
-.hsg{
-  background:#fff8e8;
+.intro{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.intro h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.intro p{
+  color:#53627a;
+  font-size:17px;
+}
+
+/* MENU NHANH */
+
+.quick-menu{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+  margin:30px 0 40px;
+}
+
+.quick-card{
+  background:white;
+  border-radius:16px;
+  padding:22px 16px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.quick-card h3{
+  margin:0 0 8px;
+}
+
+.quick-card p{
+  color:#64748b;
+  line-height:1.5;
+  min-height:45px;
+}
+
+/* TIÊU ĐỀ KHU */
+
+.section-title{
+  margin:42px 0 18px;
+  font-size:26px;
+  color:#173b78;
+  border-left:6px solid #2457a7;
+  padding-left:12px;
+}
+
+/* DANH SÁCH BÀI */
+
+.lesson-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.lesson-card{
+  background:white;
   border-radius:18px;
-  padding:28px 22px;
-  margin-top:36px;
+  padding:24px;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
 }
 
-.hsg-card{
-  border-top:4px solid #c78a19;
+.lesson-number{
+  display:inline-block;
+  min-width:38px;
+  height:38px;
+  line-height:38px;
+  text-align:center;
+  border-radius:50%;
+  background:#173b78;
+  color:white;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.lesson-card h3{
+  margin:0 0 8px;
+  font-size:21px;
+}
+
+.lesson-card p{
+  color:#53627a;
+  line-height:1.6;
+  min-height:52px;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:16px;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 15px;
+  border-radius:9px;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.btn-primary{
+  background:#173b78;
+  color:white;
+}
+
+.btn-light{
+  background:#eef4ff;
+  color:#173b78;
+}
+
+.btn-green{
+  background:#e7f8ee;
+  color:#17643a;
+}
+
+.btn-pink{
+  background:#fdebf3;
+  color:#a72a60;
+}
+
+/* VÙNG VIDEO / PHIẾU / QUIZ */
+
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+
+.resource-card{
+  background:white;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.resource-card h3{
+  margin-top:0;
+}
+
+.resource-card p{
+  color:#53627a;
+  line-height:1.6;
+}
+
+.note-box{
+  margin-top:35px;
+  padding:22px;
+  border-radius:14px;
+  background:#fff8e8;
+  color:#6b4b13;
+  line-height:1.6;
 }
 
 footer{
   margin-top:50px;
   background:#eef2f7;
   text-align:center;
-  padding:25px 15px;
+  padding:28px 15px;
   color:#334155;
   line-height:1.6;
 }
 
-@media(max-width:600px){
-  header h1{font-size:30px}
+@media(max-width:900px){
+  .quick-menu{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .lesson-grid{
+    grid-template-columns:1fr;
+  }
+
+  .resource-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+  header h1{
+    font-size:30px;
+  }
+
+  .quick-menu{
+    grid-template-columns:1fr;
+  }
+
+  .container{
+    padding:0 14px;
+  }
 }
 </style>
 </head>
@@ -110,90 +251,244 @@ footer{
 <body>
 
 <header>
-  <h1>TOÁN 6</h1>
-  <p>LỚP TOÁN CÔ HẠNH DUNG</p>
+  <h1>ƯỚC VÀ BỘI</h1>
+  <p>TOÁN 6 – LỚP TOÁN CÔ HẠNH DUNG</p>
   <p>Tư duy sáng tạo – giải hay – học là thích</p>
 </header>
 
 <main class="container">
 
-<a class="back" href="index.html">← Về trang chủ</a>
+<a class="back" href="toan6.html">← Về trang Toán 6</a>
 
 <section class="intro">
-  <h2>HỌC CHẮC NỀN TẢNG – LUYỆN TẬP HIỆU QUẢ</h2>
-  <p>Bài học – Bài tập – Phiếu luyện tập – Quiz</p>
+  <h2>CHUYÊN ĐỀ ƯỚC VÀ BỘI</h2>
+  <p>
+    Học lý thuyết → Xem ví dụ → Luyện bài tập → Làm phiếu → Xem video → Làm Quiz
+  </p>
 </section>
 
-<h2 class="section-title">SỐ HỌC</h2>
+<section class="quick-menu">
 
-<section class="grid">
-
-  <div class="card">
-    <h3>Số tự nhiên</h3>
-    <p>Phép tính, lũy thừa và thứ tự thực hiện phép tính.</p>
-    <a class="btn" href="#">Khám phá</a>
+  <div class="quick-card">
+    <h3>📘 Lý thuyết</h3>
+    <p>Kiến thức trọng tâm theo từng bài.</p>
+    <a class="btn btn-primary" href="#bai-hoc">Xem bài học</a>
   </div>
 
-  <div class="card">
+  <div class="quick-card">
+    <h3>📝 Phiếu bài tập</h3>
+    <p>Tải phiếu luyện tập theo chuyên đề.</p>
+    <a class="btn btn-green" href="#phieu">Xem phiếu</a>
+  </div>
+
+  <div class="quick-card">
+    <h3>🎥 Video</h3>
+    <p>Xem bài giảng và phần chữa bài.</p>
+    <a class="btn btn-light" href="#video">Xem video</a>
+  </div>
+
+  <div class="quick-card">
+    <h3>🎯 Quiz</h3>
+    <p>Làm trắc nghiệm và xem kết quả.</p>
+    <a class="btn btn-pink" href="#quiz">Làm Quiz</a>
+  </div>
+
+</section>
+
+<h2 class="section-title" id="bai-hoc">BÀI HỌC</h2>
+
+<section class="lesson-grid">
+
+  <div class="lesson-card">
+    <span class="lesson-number">1</span>
     <h3>Ước và bội</h3>
-    <p>ƯCLN, BCNN và các dạng toán vận dụng.</p>
-    <a class="btn" href="uoc-va-boi.html">Khám phá</a>
+    <p>
+      Khái niệm ước, bội; cách tìm ước và bội của một số tự nhiên.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="uoc-boi-bai-1.html">Xem lý thuyết</a>
+      <a class="btn btn-green" href="pdf/uoc-boi-bai-1.pdf" download>Tải PDF</a>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Số nguyên</h3>
-    <p>Phép tính với số nguyên và bài tập luyện tập.</p>
-    <a class="btn" href="#">Khám phá</a>
+  <div class="lesson-card">
+    <span class="lesson-number">2</span>
+    <h3>Dấu hiệu chia hết</h3>
+    <p>
+      Dấu hiệu chia hết cho 2, 3, 5, 9 và các bài tập nhận biết.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="uoc-boi-bai-2.html">Xem lý thuyết</a>
+      <a class="btn btn-green" href="pdf/uoc-boi-bai-2.pdf" download>Tải PDF</a>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Phân số</h3>
-    <p>Phân số và các phép tính cơ bản.</p>
-    <a class="btn" href="#">Khám phá</a>
+  <div class="lesson-card">
+    <span class="lesson-number">3</span>
+    <h3>Số nguyên tố – hợp số</h3>
+    <p>
+      Nhận biết số nguyên tố, hợp số và luyện các dạng toán cơ bản.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="uoc-boi-bai-3.html">Xem lý thuyết</a>
+      <a class="btn btn-green" href="pdf/uoc-boi-bai-3.pdf" download>Tải PDF</a>
+    </div>
+  </div>
+
+  <div class="lesson-card">
+    <span class="lesson-number">4</span>
+    <h3>Phân tích ra thừa số nguyên tố</h3>
+    <p>
+      Cách phân tích một số tự nhiên ra thừa số nguyên tố và vận dụng.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="uoc-boi-bai-4.html">Xem lý thuyết</a>
+      <a class="btn btn-green" href="pdf/uoc-boi-bai-4.pdf" download>Tải PDF</a>
+    </div>
+  </div>
+
+  <div class="lesson-card">
+    <span class="lesson-number">5</span>
+    <h3>Ước chung – ƯCLN</h3>
+    <p>
+      Tìm ước chung, ƯCLN và giải các bài toán chia nhóm, chia đều.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="uoc-boi-bai-5.html">Xem lý thuyết</a>
+      <a class="btn btn-green" href="pdf/uoc-boi-bai-5.pdf" download>Tải PDF</a>
+    </div>
+  </div>
+
+  <div class="lesson-card">
+    <span class="lesson-number">6</span>
+    <h3>Bội chung – BCNN</h3>
+    <p>
+      Tìm bội chung, BCNN và các dạng bài toán vận dụng.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="uoc-boi-bai-6.html">Xem lý thuyết</a>
+      <a class="btn btn-green" href="pdf/uoc-boi-bai-6.pdf" download>Tải PDF</a>
+    </div>
+  </div>
+
+  <div class="lesson-card">
+    <span class="lesson-number">7</span>
+    <h3>Bài toán vận dụng ƯCLN – BCNN</h3>
+    <p>
+      Bài toán thực tế và bài toán nâng cao sử dụng ƯCLN, BCNN.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="uoc-boi-bai-7.html">Xem lý thuyết</a>
+      <a class="btn btn-green" href="pdf/uoc-boi-bai-7.pdf" download>Tải PDF</a>
+    </div>
   </div>
 
 </section>
 
-<h2 class="section-title">HÌNH HỌC</h2>
+<h2 class="section-title" id="phieu">PHIẾU LUYỆN TẬP</h2>
 
-<section class="grid">
+<section class="resource-grid">
 
-  <div class="card">
-    <h3>Điểm – đường thẳng – đoạn thẳng</h3>
-    <p>Kiến thức hình học cơ bản.</p>
-    <a class="btn" href="#">Khám phá</a>
+  <div class="resource-card">
+    <h3>📄 Phiếu cơ bản</h3>
+    <p>
+      Luyện kiến thức nền tảng của chuyên đề Ước và bội.
+    </p>
+    <a class="btn btn-green" href="pdf/uoc-boi-phieu-co-ban.pdf" download>
+      Tải phiếu
+    </a>
   </div>
 
-  <div class="card">
-    <h3>Góc</h3>
-    <p>Nhận biết, đo góc và bài tập.</p>
-    <a class="btn" href="#">Khám phá</a>
+  <div class="resource-card">
+    <h3>📄 Phiếu vận dụng</h3>
+    <p>
+      Các dạng bài từ cơ bản đến vận dụng.
+    </p>
+    <a class="btn btn-green" href="pdf/uoc-boi-phieu-van-dung.pdf" download>
+      Tải phiếu
+    </a>
+  </div>
+
+  <div class="resource-card">
+    <h3>📄 Phiếu nâng cao</h3>
+    <p>
+      Bài tập dành cho học sinh khá giỏi.
+    </p>
+    <a class="btn btn-green" href="pdf/uoc-boi-phieu-nang-cao.pdf" download>
+      Tải phiếu
+    </a>
   </div>
 
 </section>
 
-<h2 class="section-title">LUYỆN TẬP & QUIZ</h2>
+<h2 class="section-title" id="video">VIDEO BÀI GIẢNG</h2>
 
-<section class="grid">
+<section class="resource-grid">
 
-  <div class="card">
-    <h3>Phiếu bài tập Toán 6</h3>
-    <p>Tài liệu theo từng chuyên đề.</p>
-    <a class="btn" href="#">Xem bài tập</a>
+  <div class="resource-card">
+    <h3>🎥 Video 1</h3>
+    <p>Ước – bội và cách tìm ước, bội.</p>
+    <a class="btn btn-primary" href="#" target="_blank">Xem video</a>
   </div>
 
-  <div class="card">
-    <h3>Quiz Toán 6</h3>
-    <p>Làm bài trực tuyến và xem kết quả.</p>
-    <a class="btn" href="#">Làm Quiz</a>
+  <div class="resource-card">
+    <h3>🎥 Video 2</h3>
+    <p>ƯCLN và các dạng bài vận dụng.</p>
+    <a class="btn btn-primary" href="#" target="_blank">Xem video</a>
+  </div>
+
+  <div class="resource-card">
+    <h3>🎥 Video 3</h3>
+    <p>BCNN và các dạng bài vận dụng.</p>
+    <a class="btn btn-primary" href="#" target="_blank">Xem video</a>
   </div>
 
 </section>
+
+<h2 class="section-title" id="quiz">QUIZ ƯỚC VÀ BỘI</h2>
+
+<section class="resource-grid">
+
+  <div class="resource-card">
+    <h3>🎯 Quiz 1</h3>
+    <p>Kiểm tra kiến thức cơ bản.</p>
+    <a class="btn btn-pink" href="uoc-boi-quiz-1.html">Làm Quiz</a>
+  </div>
+
+  <div class="resource-card">
+    <h3>🎯 Quiz 2</h3>
+    <p>ƯCLN – BCNN.</p>
+    <a class="btn btn-pink" href="uoc-boi-quiz-2.html">Làm Quiz</a>
+  </div>
+
+  <div class="resource-card">
+    <h3>🏆 Quiz tổng hợp</h3>
+    <p>Ôn toàn bộ chuyên đề.</p>
+    <a class="btn btn-pink" href="uoc-boi-quiz-tong-hop.html">
+      Làm Quiz
+    </a>
+  </div>
+
+</section>
+
+<div class="note-box">
+  <strong>Ghi chú:</strong>
+  Các nút tải PDF và Quiz đã được thiết kế sẵn.
+  Khi có tài liệu thật, chỉ cần đưa file vào đúng tên hoặc thay đường dẫn tương ứng.
+</div>
 
 </main>
 
 <footer>
   <strong>LỚP TOÁN CÔ HẠNH DUNG</strong><br>
+  Tư duy sáng tạo – giải hay – học là thích<br>
   © 2026 – Bản quyền thuộc về Lớp Toán cô Hạnh Dung
 </footer>
 
