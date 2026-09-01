@@ -7,7 +7,6 @@
 <title>Bài tập - Lớp Toán cô Hạnh Dung</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -76,7 +75,7 @@ nav{
 
 /* ĐẦU TRANG */
 .hero{
-  padding:48px 7%;
+  padding:45px 7%;
   text-align:center;
   background:
     radial-gradient(circle at 15% 20%,#ffffff,transparent 25%),
@@ -91,202 +90,186 @@ nav{
 }
 
 .hero p{
-  max-width:800px;
+  max-width:850px;
   margin:auto;
   color:#70637d;
   font-size:16px;
 }
 
-/* CÁC NHÓM BÀI TẬP */
+/* KHUNG CHÍNH */
 .homework{
-  max-width:1180px;
-  margin:45px auto;
-  padding:0 25px;
+  max-width:1200px;
+  margin:40px auto;
+  padding:0 22px;
 }
 
-.homework-group{
+/* CHỌN KHỐI */
+.grade-tabs{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-bottom:30px;
+}
+
+.grade-btn{
+  border:0;
+  cursor:pointer;
+  padding:17px 10px;
+  border-radius:15px;
   background:white;
-  border-radius:24px;
-  padding:28px;
-  margin-bottom:28px;
-  box-shadow:0 8px 26px rgba(72,42,120,.08);
-  border:1px solid #f3e9f1;
-}
-
-.homework-group h2{
-  margin:0 0 7px;
   color:#5630a4;
-  font-size:25px;
+  font-size:18px;
+  font-weight:800;
+  box-shadow:0 5px 16px rgba(72,42,120,.09);
 }
 
-.homework-group > p{
-  margin:0 0 22px;
+.grade-btn:hover,
+.grade-btn.active{
+  color:white;
+  background:linear-gradient(90deg,#5930a9,#e3458b);
+}
+
+/* NỘI DUNG TỪNG KHỐI */
+.grade-content{
+  display:none;
+}
+
+.grade-content.active{
+  display:block;
+}
+
+.grade-title{
+  background:white;
+  border-radius:20px;
+  padding:24px 28px;
+  margin-bottom:22px;
+  box-shadow:0 7px 22px rgba(72,42,120,.08);
+}
+
+.grade-title h2{
+  margin:0;
+  color:#5630a4;
+  font-size:28px;
+}
+
+.grade-title p{
+  margin:5px 0 0;
   color:#70637d;
 }
 
-.homework-grid{
+/* NHÓM TÀI LIỆU */
+.category{
+  background:white;
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:22px;
+  border:1px solid #f1e6f1;
+  box-shadow:0 6px 20px rgba(72,42,120,.06);
+}
+
+.category h3{
+  margin:0 0 6px;
+  color:#45268f;
+  font-size:22px;
+}
+
+.category-sub{
+  color:#776b80;
+  margin:0 0 18px;
+}
+
+/* DANH SÁCH TÀI LIỆU */
+.resource-list{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
+  gap:12px;
 }
 
-.homework-card{
-  background:linear-gradient(145deg,#fffafd,#f7f0ff);
-  border:1px solid #eee2f4;
-  border-radius:18px;
-  padding:23px 15px;
-  text-align:center;
-  transition:.2s;
+.resource{
+  display:grid;
+  grid-template-columns:minmax(210px,1.5fr) minmax(130px,.7fr) auto;
+  align-items:center;
+  gap:15px;
+  background:linear-gradient(135deg,#fffafd,#f7f1ff);
+  border:1px solid #eee3f4;
+  border-radius:15px;
+  padding:15px 17px;
 }
 
-.homework-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 18px rgba(70,45,120,.10);
+.resource-name{
+  font-weight:800;
+  color:#3f2c72;
 }
 
-.homework-card h3{
-  margin:0 0 9px;
-  color:#e3458b;
-  font-size:20px;
-}
-
-.homework-card p{
-  min-height:42px;
-  margin:0 0 14px;
-  color:#71677b;
+.resource-date{
+  color:#75697c;
   font-size:14px;
 }
 
-.btn{
-  border:0;
-  cursor:pointer;
-  color:white;
-  font-weight:700;
-  font-size:13px;
-  padding:10px 18px;
-  border-radius:22px;
-  background:linear-gradient(90deg,#5930a9,#e3458b);
-}
-
-/* POPUP */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:rgba(35,24,65,.40);
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.modal.show{
+.actions{
   display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:7px;
 }
 
-.modal-box{
-  width:min(760px,95vw);
-  max-height:90vh;
-  overflow:auto;
-  background:white;
-  border-radius:25px;
-  padding:30px;
-  position:relative;
-  box-shadow:0 20px 60px rgba(0,0,0,.20);
-}
-
-.close{
-  position:absolute;
-  top:13px;
-  right:15px;
-  width:38px;
-  height:38px;
+.action{
+  display:inline-block;
   border:0;
-  border-radius:50%;
-  background:#f3eafa;
-  color:#5630a4;
-  font-size:22px;
+  padding:8px 13px;
+  border-radius:18px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:800;
   cursor:pointer;
 }
 
-.modal-box h2{
-  margin:0 45px 5px 0;
-  color:#5630a4;
+.view{
+  background:#5930a9;
+  color:white;
 }
 
-.category{
-  color:#e3458b;
-  font-weight:700;
-  margin-bottom:22px;
-}
-
-/* KHUNG BÀI TẬP */
-.latest{
-  border-radius:18px;
-  padding:20px;
-  background:linear-gradient(135deg,#fff2f8,#f4efff);
-  border:1px solid #f1dfeb;
-}
-
-.new-badge{
-  display:inline-block;
+.download{
   background:#e3458b;
   color:white;
-  padding:5px 11px;
-  border-radius:15px;
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:12px;
 }
 
-.latest h3{
-  margin:0 0 14px;
-  color:#45268f;
+.answer{
+  background:#eef8ef;
+  color:#27723c;
+  border:1px solid #bfe0c7;
 }
 
-.detail{
-  background:white;
-  border-radius:13px;
-  padding:12px 14px;
-  margin-top:9px;
+/* CHƯA CÓ TÀI LIỆU */
+.empty{
+  padding:15px 17px;
+  border-radius:14px;
+  background:#faf7fc;
+  color:#817487;
+  border:1px dashed #d8cde0;
 }
 
-.detail strong{
+.empty strong{
   color:#5630a4;
 }
 
-.action-buttons{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:18px;
+/* GHI CHÚ CHO CÔ */
+.teacher-note{
+  background:#fff7df;
+  border:1px solid #f0daa1;
+  color:#66521b;
+  border-radius:16px;
+  padding:17px 20px;
+  margin-top:28px;
 }
 
-.action-buttons button{
-  border:0;
-  cursor:pointer;
-  color:white;
-  font-weight:700;
-  padding:10px 17px;
-  border-radius:20px;
-  background:linear-gradient(90deg,#5930a9,#e3458b);
-}
-
-.message{
-  display:none;
-  margin-top:15px;
-  padding:13px;
-  text-align:center;
-  background:white;
-  border-radius:13px;
-  color:#b33d75;
-  font-weight:700;
+.teacher-note strong{
+  color:#513e0e;
 }
 
 /* QUAY VỀ */
 .back{
   text-align:center;
-  margin:10px 0 50px;
+  margin:35px 0 50px;
 }
 
 .back a{
@@ -315,8 +298,16 @@ nav{
     gap:20px;
   }
 
-  .homework-grid{
+  .grade-tabs{
     grid-template-columns:repeat(2,1fr);
+  }
+
+  .resource{
+    grid-template-columns:1fr;
+  }
+
+  .actions{
+    justify-content:flex-start;
   }
 
   .hero h1{
@@ -326,15 +317,18 @@ nav{
 
 @media(max-width:600px){
 
-  .homework-grid{
-    grid-template-columns:1fr;
+  .grade-tabs{
+    grid-template-columns:1fr 1fr;
   }
 
   .topbar{
     font-size:11px;
   }
-}
 
+  .category{
+    padding:18px;
+  }
+}
 </style>
 </head>
 
@@ -367,286 +361,305 @@ nav{
 
 <section class="hero">
 
-  <h1>📝 BÀI TẬP VỀ NHÀ</h1>
+  <h1>📝 BÀI TẬP & ĐỀ LUYỆN</h1>
 
   <p>
-    Bài tập được sắp xếp theo từng khối lớp.
-    Học sinh có thể theo dõi bài mới, ngày giao,
-    hạn hoàn thành và tài liệu bài tập tại đây.
+    Bài tập về nhà – Tự luyện – Đề kiểm tra tuần – Đề kiểm tra tháng –
+    Đề giữa kỳ và cuối kỳ dành cho học sinh Toán 6, 7, 8, 9.
   </p>
 
 </section>
 
-<section class="homework">
+<main class="homework">
 
-<!-- 1. TOÁN THCS -->
+  <!-- CHỌN KHỐI -->
 
-<div class="homework-group">
+  <div class="grade-tabs">
 
-  <h2>📘 BÀI TẬP TOÁN THCS</h2>
+    <button class="grade-btn active"
+            data-grade="grade6">
+      TOÁN 6
+    </button>
 
-  <p>
-    Bài tập về nhà dành cho học sinh Toán 6 đến Toán 9.
-  </p>
+    <button class="grade-btn"
+            data-grade="grade7">
+      TOÁN 7
+    </button>
 
-  <div class="homework-grid">
+    <button class="grade-btn"
+            data-grade="grade8">
+      TOÁN 8
+    </button>
 
-    <div class="homework-card">
-      <h3>TOÁN 6</h3>
-      <p>Bài tập về nhà Toán 6.</p>
-      <button class="btn"
-        onclick="openHomework('TOÁN 6','thcs')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
-
-    <div class="homework-card">
-      <h3>TOÁN 7</h3>
-      <p>Bài tập về nhà Toán 7.</p>
-      <button class="btn"
-        onclick="openHomework('TOÁN 7','thcs')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
-
-    <div class="homework-card">
-      <h3>TOÁN 8</h3>
-      <p>Bài tập về nhà Toán 8.</p>
-      <button class="btn"
-        onclick="openHomework('TOÁN 8','thcs')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
-
-    <div class="homework-card">
-      <h3>TOÁN 9</h3>
-      <p>Bài tập về nhà Toán 9.</p>
-      <button class="btn"
-        onclick="openHomework('TOÁN 9','thcs')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
+    <button class="grade-btn"
+            data-grade="grade9">
+      TOÁN 9
+    </button>
 
   </div>
 
-</div>
 
-<!-- 2. HSG -->
+  <!-- ================= TOÁN 6 ================= -->
 
-<div class="homework-group">
+  <section class="grade-content active" id="grade6">
 
-  <h2>🏆 BÀI TẬP BỒI DƯỠNG HỌC SINH GIỎI</h2>
-
-  <p>
-    Bài luyện nâng cao dành cho học sinh khá giỏi.
-  </p>
-
-  <div class="homework-grid">
-
-    <div class="homework-card">
-      <h3>HSG TOÁN 6</h3>
-      <p>Bài tập bồi dưỡng HSG Toán 6.</p>
-      <button class="btn"
-        onclick="openHomework('HSG TOÁN 6','hsg')">
-        MỞ BÀI TẬP
-      </button>
+    <div class="grade-title">
+      <h2>📘 TOÁN 6</h2>
+      <p>Bài tập và đề luyện dành cho học sinh khối 6.</p>
     </div>
 
-    <div class="homework-card">
-      <h3>HSG TOÁN 7</h3>
-      <p>Bài tập bồi dưỡng HSG Toán 7.</p>
-      <button class="btn"
-        onclick="openHomework('HSG TOÁN 7','hsg')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
+    <div class="category">
+      <h3>🏠 BÀI TẬP VỀ NHÀ</h3>
+      <p class="category-sub">
+        Bài tập được giao sau từng buổi học.
+      </p>
 
-    <div class="homework-card">
-      <h3>HSG TOÁN 8</h3>
-      <p>Bài tập bồi dưỡng HSG Toán 8.</p>
-      <button class="btn"
-        onclick="openHomework('HSG TOÁN 8','hsg')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
+      <div class="resource-list">
 
-    <div class="homework-card">
-      <h3>HSG TOÁN 9</h3>
-      <p>Bài tập bồi dưỡng HSG Toán 9.</p>
-      <button class="btn"
-        onclick="openHomework('HSG TOÁN 9','hsg')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- 3. CHỮA HỔNG -->
-
-<div class="homework-group">
-
-  <h2>🌱 BÀI TẬP CHỮA HỔNG KIẾN THỨC</h2>
-
-  <p>
-    Bài tập cơ bản giúp học sinh củng cố lại phần kiến thức còn yếu.
-  </p>
-
-  <div class="homework-grid">
-
-    <div class="homework-card">
-      <h3>CHỮA HỔNG 6</h3>
-      <p>Bài tập củng cố Toán 6.</p>
-      <button class="btn"
-        onclick="openHomework('CHỮA HỔNG TOÁN 6','chua')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
-
-    <div class="homework-card">
-      <h3>CHỮA HỔNG 7</h3>
-      <p>Bài tập củng cố Toán 7.</p>
-      <button class="btn"
-        onclick="openHomework('CHỮA HỔNG TOÁN 7','chua')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
-
-    <div class="homework-card">
-      <h3>CHỮA HỔNG 8</h3>
-      <p>Bài tập củng cố Toán 8.</p>
-      <button class="btn"
-        onclick="openHomework('CHỮA HỔNG TOÁN 8','chua')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
-
-    <div class="homework-card">
-      <h3>CHỮA HỔNG 9</h3>
-      <p>Bài tập củng cố Toán 9.</p>
-      <button class="btn"
-        onclick="openHomework('CHỮA HỔNG TOÁN 9','chua')">
-        MỞ BÀI TẬP
-      </button>
-    </div>
-
-  </div>
-
-</div>
-
-</section>
-
-<!-- POPUP -->
-
-<div class="modal" id="homeworkModal">
-
-  <div class="modal-box">
-
-    <button class="close" onclick="closeHomework()">×</button>
-
-    <h2 id="homeworkTitle">BÀI TẬP</h2>
-
-    <div class="category" id="homeworkCategory"></div>
-
-    <div class="latest">
-
-      <span class="new-badge">
-        🆕 BÀI MỚI NHẤT
-      </span>
-
-      <h3 id="latestTitle">
-        Chưa có bài tập mới
-      </h3>
-
-      <div class="detail">
-        📅 <strong>Ngày giao:</strong>
-        <span>Đang cập nhật</span>
-      </div>
-
-      <div class="detail">
-        ⏰ <strong>Hạn hoàn thành:</strong>
-        <span>Đang cập nhật</span>
-      </div>
-
-      <div class="detail">
-        📖 <strong>Nội dung:</strong>
-        <span>Đang cập nhật</span>
-      </div>
-
-      <div class="action-buttons">
-
-        <button onclick="showHomeworkMessage()">
-          📄 XEM BÀI TẬP
-        </button>
-
-        <button onclick="showHomeworkMessage()">
-          ⬇ TẢI PDF
-        </button>
+        <div class="empty">
+          <strong>Chưa có bài tập.</strong>
+          Bài mới sẽ được cô cập nhật tại đây.
+        </div>
 
       </div>
-
-      <div class="message" id="homeworkMessage">
-        Bài tập đang được cô cập nhật.
-      </div>
-
     </div>
 
-  </div>
 
-</div>
+    <div class="category">
+      <h3>✍️ BÀI TẬP TỰ LUYỆN</h3>
+      <p class="category-sub">
+        Phiếu luyện thêm để củng cố và nâng cao kiến thức.
+      </p>
 
-<div class="back">
-  <a href="index.html">
-    ← QUAY VỀ TRANG CHỦ
-  </a>
-</div>
+      <div class="resource-list">
 
-<script>
+        <div class="empty">
+          <strong>Chưa có phiếu tự luyện.</strong>
+        </div>
 
-function openHomework(title,type){
+      </div>
+    </div>
 
-  document.getElementById("homeworkTitle").textContent =
-    "BÀI TẬP VỀ NHÀ - " + title;
 
-  if(type==="thcs"){
-    document.getElementById("homeworkCategory").textContent =
-      "BÀI TẬP TOÁN THCS";
-  }
+    <div class="category">
+      <h3>📅 ĐỀ KIỂM TRA THEO TUẦN</h3>
+      <p class="category-sub">
+        Đề luyện và kiểm tra kiến thức từng tuần.
+      </p>
 
-  if(type==="hsg"){
-    document.getElementById("homeworkCategory").textContent =
-      "BỒI DƯỠNG HỌC SINH GIỎI";
-  }
+      <div class="resource-list">
 
-  if(type==="chua"){
-    document.getElementById("homeworkCategory").textContent =
-      "CHỮA HỔNG KIẾN THỨC";
-  }
+        <div class="empty">
+          <strong>Chưa có đề tuần.</strong>
+        </div>
 
-  document.getElementById("latestTitle").textContent =
-    "Chưa có bài tập mới";
+      </div>
+    </div>
 
-  document.getElementById("homeworkMessage").style.display="none";
 
-  document.getElementById("homeworkModal").classList.add("show");
-}
+    <div class="category">
+      <h3>🗓️ ĐỀ KIỂM TRA THEO THÁNG</h3>
+      <p class="category-sub">
+        Đề tổng hợp kiến thức theo từng tháng.
+      </p>
 
-function closeHomework(){
-  document.getElementById("homeworkModal").classList.remove("show");
-}
+      <div class="resource-list">
 
-function showHomeworkMessage(){
-  document.getElementById("homeworkMessage").style.display="block";
-}
+        <div class="empty">
+          <strong>Chưa có đề tháng.</strong>
+        </div>
 
-document.getElementById("homeworkModal").addEventListener("click",function(e){
-  if(e.target===this){
-    closeHomework();
-  }
-});
+      </div>
+    </div>
 
-</script>
 
-</body>
-</html>
+    <div class="category">
+      <h3>📚 ĐỀ GIỮA KỲ</h3>
+
+      <div class="resource-list">
+
+        <div class="empty">
+          <strong>Chưa có đề giữa kỳ.</strong>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="category">
+      <h3>🎓 ĐỀ CUỐI KỲ</h3>
+
+      <div class="resource-list">
+
+        <div class="empty">
+          <strong>Chưa có đề cuối kỳ.</strong>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================= TOÁN 7 ================= -->
+
+  <section class="grade-content" id="grade7">
+
+    <div class="grade-title">
+      <h2>📗 TOÁN 7</h2>
+      <p>Bài tập và đề luyện dành cho học sinh khối 7.</p>
+    </div>
+
+    <div class="category">
+      <h3>🏠 BÀI TẬP VỀ NHÀ</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có bài tập.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>✍️ BÀI TẬP TỰ LUYỆN</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có phiếu tự luyện.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>📅 ĐỀ KIỂM TRA THEO TUẦN</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có đề tuần.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>🗓️ ĐỀ KIỂM TRA THEO THÁNG</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có đề tháng.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>📚 ĐỀ GIỮA KỲ</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có đề giữa kỳ.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>🎓 ĐỀ CUỐI KỲ</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có đề cuối kỳ.</strong>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================= TOÁN 8 ================= -->
+
+  <section class="grade-content" id="grade8">
+
+    <div class="grade-title">
+      <h2>📙 TOÁN 8</h2>
+      <p>Bài tập và đề luyện dành cho học sinh khối 8.</p>
+    </div>
+
+    <div class="category">
+      <h3>🏠 BÀI TẬP VỀ NHÀ</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có bài tập.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>✍️ BÀI TẬP TỰ LUYỆN</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có phiếu tự luyện.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>📅 ĐỀ KIỂM TRA THEO TUẦN</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có đề tuần.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>🗓️ ĐỀ KIỂM TRA THEO THÁNG</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có đề tháng.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>📚 ĐỀ GIỮA KỲ</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có đề giữa kỳ.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>🎓 ĐỀ CUỐI KỲ</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có đề cuối kỳ.</strong>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ================= TOÁN 9 ================= -->
+
+  <section class="grade-content" id="grade9">
+
+    <div class="grade-title">
+      <h2>📕 TOÁN 9</h2>
+      <p>Bài tập và đề luyện dành cho học sinh khối 9.</p>
+    </div>
+
+    <div class="category">
+      <h3>🏠 BÀI TẬP VỀ NHÀ</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có bài tập.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>✍️ BÀI TẬP TỰ LUYỆN</h3>
+      <div class="resource-list">
+        <div class="empty">
+          <strong>Chưa có phiếu tự luyện.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>📅 ĐỀ KIỂM TRA THEO TUẦN</h3>
+      <div class="resource
