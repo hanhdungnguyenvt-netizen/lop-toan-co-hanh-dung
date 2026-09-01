@@ -649,11 +649,16 @@ footer strong{
 }
   .feature-strip{
   display:grid;
- grid-template-columns:repeat(6,minmax(0,1fr));
+  grid-template-columns:repeat(6,minmax(0,1fr));
   gap:12px;
   padding:20px;
   background:#fff7ff;
   border-radius:18px;
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  box-sizing:border-box;
+  overflow:hidden;
 }
    .feature-item{
   display:flex;
